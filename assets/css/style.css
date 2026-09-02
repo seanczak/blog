@@ -38,10 +38,12 @@ h3 a:hover { color: #1e4d42; text-decoration: underline; }
 .category-links button span { color: #8a9499; float: right; }
 .category-links button:hover, .category-links button.is-active, .article-nav a:hover { color: #087f86; }
 .article-nav .eyebrow:not(:first-child) { margin-top: 2rem; }
-.post-layout { grid-template-columns: minmax(0, 44rem) 12rem; }
-.post-layout--plain { grid-template-columns: minmax(0, 44rem); }
+.post-layout { grid-template-columns: minmax(0, 1fr) 12rem; }
+.post-layout--plain { grid-template-columns: minmax(0, 1fr); }
 .post > header { margin-bottom: 2.5rem; }
 .post > header h1 { max-width: none; }
+.post h2 { font-size: clamp(1.8rem, 4vw, 2.45rem); letter-spacing: -.04em; margin: 3.25rem 0 1rem; }
+.post h3 { font-family: ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.15rem, 2.5vw, 1.4rem); letter-spacing: -.02em; margin: 2rem 0 .6rem; }
 h2[id], h3[id] { scroll-margin-top: 6rem; }
 .article-nav h2 { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 1rem; letter-spacing: .02em; margin: 0 0 .8rem; }
 .article-nav a.is-active { border-left-color: #087f86; color: #087f86; font-weight: 700; }
@@ -65,6 +67,10 @@ footer { border-top: 2px solid #c6a34b; color: #6b767b; font-family: ui-sans-ser
   .article-nav a.is-active { border-left-color: #44c5c9; color: #44c5c9; }
   .post-categories span { border-color: #bda85d; color: #d7c882; }
   pre { background: #2d363a; }
+}
+@media (max-width: 56rem) {
+  .post-layout { grid-template-columns: minmax(0, 1fr); }
+  .article-nav { display: none; }
 }
 @media (max-width: 32rem) {
   .site-header nav { gap: .7rem; }

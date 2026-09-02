@@ -10,11 +10,15 @@ categories: [experimentation, statistics]
 
 Power analysis is the habit of deciding what evidence would be useful *before* collecting data. It turns a vague question—“how many observations do we need?”—into a few explicit assumptions: the smallest effect worth detecting, the acceptable false-positive rate, and the chance of detecting that effect.
 
+### The decision it supports {#the-decision-it-supports}
+
 For an A/B test, the practical output is usually a sample size per group. The answer is never universal: smaller effects need more data, and demanding higher confidence costs more observations.
 
 ## Statistical background {#statistical-background}
 
 For a two-sided test, set a significance level `alpha` (often 0.05). Statistical power is `1 - beta`: the probability that the test detects a real effect of the size we planned for. A common target is 80% power, which means accepting a 20% chance of missing that effect.
+
+### Effect size sets the scale {#effect-size-sets-the-scale}
 
 The standardized effect size, Cohen's *d*, expresses the difference in standard-deviation units. For two equally sized groups, a useful normal-approximation planning formula is:
 
@@ -27,6 +31,8 @@ It is a planning approximation, not a substitute for checking the assumptions of
 ## A small calculation {#a-small-calculation}
 
 The following Python function computes approximate power for a two-sided test with two equally sized groups.
+
+### A two-group approximation {#a-two-group-approximation}
 
 ```python
 from statistics import NormalDist
@@ -47,6 +53,8 @@ The exact sample size should be rounded up and then adjusted for expected attrit
 ## Reading the curves {#reading-the-curves}
 
 The first figure shows how quickly power rises as each group grows. With a modest effect (`d = 0.35`), the curve reaches roughly 80% around 130 observations per group. A small effect requires far more data; a large effect reaches useful power much sooner.
+
+### Sample size changes the slope {#sample-size-changes-the-slope}
 
 ![Power curves for three standardized effect sizes]({{ '/assets/images/power-analysis-power-curves.svg' | relative_url }})
 
