@@ -24,12 +24,13 @@ h3 a:hover { color: #1e4d42; text-decoration: underline; }
 .section-heading span, .post-meta { color: #6b767b; }
 .post-list { list-style: none; margin: 0; padding: 0; }
 .post-list li { border-top: 2px solid #c6a34b; padding: 2.1rem 0 2.3rem; }
-.post-list li:first-child { border-top: 0; padding-top: .9rem; }
+.post-list li.is-first-visible { border-top: 0; padding-top: .9rem; }
 .post-card > p:not(.post-meta) { color: #555f64; margin: 0 0 1rem; max-width: 38rem; }
 .post-meta { margin: 0; }
 .post-categories { display: flex; flex-wrap: wrap; gap: .45rem; margin: 0 0 .8rem; }
 .post-categories span { border: 1px solid #c6a34b; border-radius: 999px; color: #78612a; font-family: ui-sans-serif, system-ui, sans-serif; font-size: .7rem; font-weight: 650; letter-spacing: .05em; padding: .16rem .5rem; text-transform: uppercase; }
 .category-nav, .article-nav { align-self: start; border-left: 1px solid #cbd1d4; padding-left: 1.25rem; position: sticky; top: 1.5rem; }
+.article-nav { border-left: 0; padding-left: 0; }
 .category-nav h2 { margin-bottom: .8rem; }
 .category-links, .article-nav nav { display: grid; gap: .35rem; }
 .article-nav nav { border-left: 1px solid #cbd1d4; gap: .15rem; }
@@ -41,9 +42,9 @@ h3 a:hover { color: #1e4d42; text-decoration: underline; }
 .post-layout { grid-template-columns: minmax(0, 1fr) 12rem; }
 .post-layout--plain { grid-template-columns: minmax(0, 1fr); }
 .post > header { margin-bottom: 2.5rem; }
-.post > header h1 { max-width: none; }
-.post h2 { font-size: clamp(1.8rem, 4vw, 2.45rem); letter-spacing: -.04em; margin: 3.25rem 0 1rem; }
-.post h3 { font-family: ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.15rem, 2.5vw, 1.4rem); letter-spacing: -.02em; margin: 2rem 0 .6rem; }
+.post > header h1 { font-size: clamp(2rem, 4vw, 3.1rem); max-width: none; }
+.post h2 { font-size: clamp(1.45rem, 3vw, 1.9rem); letter-spacing: -.035em; margin: 3.25rem 0 1rem; }
+.post h3 { font-family: ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.05rem, 2vw, 1.2rem); letter-spacing: -.02em; margin: 2rem 0 .6rem; }
 h2[id], h3[id] { scroll-margin-top: 6rem; }
 .article-nav h2 { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 1rem; letter-spacing: .02em; margin: 0 0 .8rem; }
 .article-nav a.is-active { border-left-color: #087f86; color: #087f86; font-weight: 700; }

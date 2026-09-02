@@ -42,11 +42,16 @@ title: Writing
 
     const showCategory = category => {
       let visible = 0;
+      let firstVisible = true;
       posts.forEach(post => {
         const categories = (post.dataset.categories || '').split('|').map(slugify);
         const matches = category === 'all' || categories.includes(category);
         post.hidden = !matches;
-        if (matches) visible += 1;
+        post.classList.toggle('is-first-visible', matches && firstVisible);
+        if (matches) {
+          visible += 1;
+          firstVisible = false;
+        }
       });
       buttons.forEach(button => button.classList.toggle('is-active', button.dataset.category === category));
       if (count) count.textContent = `${visible} ${visible === 1 ? 'post' : 'posts'}`;
@@ -58,6 +63,10 @@ title: Writing
     }));
 
     const hashCategory = location.hash.replace('#category-', '');
-    if (buttons.some(button => button.dataset.category === hashCategory)) showCategory(hashCategory);
+    if (buttons.some(button => button.dataset.category === hashCategory)) {
+      showCategory(hashCategory);
+    } else {
+      showCategory('all');
+    }
   })();
 </script>
