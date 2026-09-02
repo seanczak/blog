@@ -1,18 +1,63 @@
 ---
 layout: default
-title: Home
+title: Writing
 ---
 
-# Writing
+<div class="archive-layout">
+  <section class="writing" aria-label="Posts">
+    <ol class="post-list" id="post-list">
+      {% for post in site.posts %}
+        <li data-categories="{{ post.categories | join: '|' }}">
+          <article class="post-card">
+            {% if post.categories.size > 0 %}
+              <p class="post-categories">{% for category in post.categories %}<span>{{ category }}</span>{% endfor %}</p>
+            {% endif %}
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+            <p class="post-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time></p>
+          </article>
+        </li>
+      {% endfor %}
+    </ol>
+  </section>
 
-Notes, experiments, and things worth remembering.
+  <aside class="category-nav" aria-label="Post categories">
+    <h2>Categories</h2>
+    <div class="category-links">
+      <button class="is-active" data-category="all" type="button">All <span>{{ site.posts | size }}</span></button>
+      {% assign categories = site.categories | sort %}
+      {% for category in categories %}
+        <button data-category="{{ category[0] | slugify }}" type="button">{{ category[0] }} <span>{{ category[1] | size }}</span></button>
+      {% endfor %}
+    </div>
+  </aside>
+</div>
 
-<ul class="post-list">
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
-      <span class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</span>
-      {% if post.description %}<div>{{ post.description }}</div>{% endif %}
-    </li>
-  {% endfor %}
-</ul>
+<script>
+  (() => {
+    const buttons = [...document.querySelectorAll('[data-category]')];
+    const posts = [...document.querySelectorAll('#post-list > li')];
+    const count = document.querySelector('#post-count');
+    const slugify = value => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+    const showCategory = category => {
+      let visible = 0;
+      posts.forEach(post => {
+        const categories = (post.dataset.categories || '').split('|').map(slugify);
+        const matches = category === 'all' || categories.includes(category);
+        post.hidden = !matches;
+        if (matches) visible += 1;
+      });
+      buttons.forEach(button => button.classList.toggle('is-active', button.dataset.category === category));
+      if (count) count.textContent = `${visible} ${visible === 1 ? 'post' : 'posts'}`;
+    };
+
+    buttons.forEach(button => button.addEventListener('click', () => {
+      history.replaceState(null, '', button.dataset.category === 'all' ? location.pathname : `#category-${button.dataset.category}`);
+      showCategory(button.dataset.category);
+    }));
+
+    const hashCategory = location.hash.replace('#category-', '');
+    if (buttons.some(button => button.dataset.category === hashCategory)) showCategory(hashCategory);
+  })();
+</script>

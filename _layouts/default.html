@@ -10,15 +10,18 @@
   <body>
     <header class="site-header">
       <nav>
+        <img class="header-profile" src="{{ '/assets/images/sean-fronczak.png' | relative_url }}" alt="Sean Fronczak">
         <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <a href="{{ '/' | relative_url }}">Posts</a>
         <a href="{{ '/about/' | relative_url }}">About</a>
+        <a href="https://www.linkedin.com/in/sean-fronczak/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
       </nav>
     </header>
     <main>
       {{ content }}
     </main>
     <footer>
-      <span>© {{ site.time | date: '%Y' }} Sean Czak</span>
+      <span>© {{ site.time | date: '%Y' }} Sean Fronczak</span>
     </footer>
   </body>
 </html>
