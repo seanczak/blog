@@ -1,0 +1,18 @@
+:root { color-scheme: light dark; }
+* { box-sizing: border-box; }
+body { font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.65; margin: 0; }
+.site-header, main, footer { width: min(100% - 2rem, 48rem); margin: auto; }
+.site-header { padding: 1.5rem 0; border-bottom: 1px solid #8885; }
+nav { display: flex; gap: 1.25rem; align-items: baseline; }
+a { color: #0969da; }
+.site-title { color: inherit; font-weight: 700; margin-right: auto; text-decoration: none; }
+main { padding: 3rem 0 4rem; }
+h1, h2, h3 { line-height: 1.2; margin-top: 2rem; }
+h1 { font-size: clamp(2rem, 6vw, 3rem); margin-top: 0; }
+.post-list { list-style: none; padding: 0; }
+.post-list li { border-top: 1px solid #8885; padding: 1.1rem 0; }
+.post-list a { font-weight: 700; font-size: 1.2rem; }
+.post-meta { color: #666; font-size: .92rem; }
+pre { overflow-x: auto; padding: 1rem; border-radius: .4rem; background: #8882; }
+img { height: auto; max-width: 100%; }
+footer { border-top: 1px solid #8885; color: #666; font-size: .9rem; padding: 1.5rem 0; }

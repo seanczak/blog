@@ -1,0 +1,7 @@
+title: Sean Czak's Blog
+description: Notes, experiments, and things worth remembering.
+url: "https://seanczak.github.io"
+baseurl: "/blog"
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
+timezone: America/Los_Angeles
