@@ -28,7 +28,8 @@ h3 a:hover { color: #1e4d42; text-decoration: underline; }
 .post-card > p:not(.post-meta) { color: #555f64; margin: 0 0 1rem; max-width: 38rem; }
 .post-meta { margin: 0; }
 .post-categories { display: flex; flex-wrap: wrap; gap: .45rem; margin: 0 0 .8rem; }
-.post-categories span { border: 1px solid #c6a34b; border-radius: 999px; color: #78612a; font-family: ui-sans-serif, system-ui, sans-serif; font-size: .7rem; font-weight: 650; letter-spacing: .05em; padding: .16rem .5rem; text-transform: uppercase; }
+.post-categories span, .post-categories a { border: 1px solid #c6a34b; border-radius: 999px; color: #78612a; font-family: ui-sans-serif, system-ui, sans-serif; font-size: .7rem; font-weight: 650; letter-spacing: .05em; padding: .16rem .5rem; text-decoration: none; text-transform: uppercase; }
+.post-categories a:hover { background: #c6a34b; color: #24282b; }
 .category-nav, .article-nav { align-self: start; border-left: 1px solid #cbd1d4; padding-left: 1.25rem; position: sticky; top: 1.5rem; }
 .article-nav { border-left: 0; padding-left: 0; }
 .category-nav h2 { margin-bottom: .8rem; }
@@ -43,6 +44,7 @@ h3 a:hover { color: #1e4d42; text-decoration: underline; }
 .post-layout--plain { grid-template-columns: minmax(0, 1fr); }
 .post > header { margin-bottom: 2.5rem; }
 .post > header h1 { font-size: clamp(2rem, 4vw, 3.1rem); max-width: none; }
+.post-description { color: #555f64; font-size: 1.2rem; line-height: 1.5; margin: .8rem 0 1rem; max-width: 48rem; }
 .post h2 { font-size: clamp(1.45rem, 3vw, 1.9rem); letter-spacing: -.035em; margin: 3.25rem 0 1rem; }
 .post h3 { font-family: ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.05rem, 2vw, 1.2rem); letter-spacing: -.02em; margin: 2rem 0 .6rem; }
 h2[id], h3[id] { scroll-margin-top: 6rem; }
@@ -61,12 +63,14 @@ footer { border-top: 2px solid #c6a34b; color: #6b767b; font-family: ui-sans-ser
   .site-header nav a:not(.site-title) { color: #bdc7ca; }
   .site-header nav a:not(.site-title):hover { color: #44c5c9; }
   .post-card > p:not(.post-meta) { color: #bdc7ca; }
+  .post-description { color: #bdc7ca; }
   .section-heading span, .post-meta, footer { color: #9eaaae; }
   .category-nav, .article-nav { border-color: #465156; }
   .article-nav nav { border-color: #465156; }
   .category-links button, .article-nav a { color: #bdc7ca; }
   .article-nav a.is-active { border-left-color: #44c5c9; color: #44c5c9; }
-  .post-categories span { border-color: #bda85d; color: #d7c882; }
+  .post-categories span, .post-categories a { border-color: #bda85d; color: #d7c882; }
+  .post-categories a:hover { background: #bda85d; color: #1f2528; }
   pre { background: #2d363a; }
 }
 @media (max-width: 56rem) {
