@@ -35,6 +35,8 @@ h3 a:hover { color: #1e4d42; text-decoration: underline; }
 .article-nav { border-left: 0; padding-left: 0; }
 .category-nav h2 { margin-bottom: .8rem; }
 .category-links, .article-nav nav { display: grid; gap: .35rem; }
+.category-select { display: none; }
+.visually-hidden { height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; clip: rect(0, 0, 0, 0); white-space: nowrap; }
 .article-nav nav { border-left: 1px solid #cbd1d4; gap: .15rem; }
 .category-links button, .article-nav a { background: none; border: 0; color: #555f64; cursor: pointer; font-family: ui-sans-serif, system-ui, sans-serif; font-size: .85rem; padding: .15rem 0; text-align: left; text-decoration: none; }
 .article-nav a { border-left: 2px solid transparent; margin-left: var(--toc-indent, 0rem); padding-left: .65rem; }
@@ -68,6 +70,7 @@ footer { border-top: 2px solid #c6a34b; color: #6b767b; font-family: ui-sans-ser
   .section-heading span, .post-meta, footer { color: #9eaaae; }
   .category-nav, .article-nav { border-color: #465156; }
   .article-nav nav { border-color: #465156; }
+  .category-select { background: #1f2528; border-color: #bda85d; color: #e1e6e8; }
   .category-links button, .article-nav a { color: #bdc7ca; }
   .article-nav a.is-active { border-left-color: #44c5c9; color: #44c5c9; }
   .post-categories span, .post-categories a, .post-categories button { border-color: #bda85d; color: #d7c882; }
@@ -85,8 +88,13 @@ footer { border-top: 2px solid #c6a34b; color: #6b767b; font-family: ui-sans-ser
   .post-categories a:hover, .post-categories button:hover { background: #bda85d; color: #1f2528; }
 }
 @media (max-width: 32rem) {
+  main { padding-top: 1.25rem; }
   .site-header nav { gap: .7rem; }
   .header-profile { height: 3.5rem; width: 3.5rem; }
-  .archive-layout, .post-layout { display: block; }
-  .category-nav, .article-nav { border-left: 0; border-top: 1px solid #cbd1d4; margin-top: 2.5rem; padding: 1.5rem 0 0; position: static; }
+  .archive-layout { display: flex; flex-direction: column; gap: 2rem; }
+  .post-layout { display: block; }
+  .category-nav { border: 0; margin: 0; order: -1; padding: 0; position: static; }
+  .category-links { display: none; }
+  .category-select { appearance: none; background: #f1f3f4; border: 1px solid #c6a34b; border-radius: .25rem; color: #24282b; display: block; font: inherit; padding: .6rem .75rem; width: 100%; }
+  .article-nav { border-left: 0; border-top: 1px solid #cbd1d4; margin-top: 2.5rem; padding: 1.5rem 0 0; position: static; }
 }

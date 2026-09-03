@@ -23,9 +23,16 @@ title: Writing
 
   <aside class="category-nav" aria-label="Post categories">
     <h2>Categories</h2>
+    <label class="visually-hidden" for="category-select">Filter posts by category</label>
+    <select class="category-select" id="category-select">
+      <option value="all">All ({{ site.posts | size }})</option>
+      {% assign categories = site.categories | sort %}
+      {% for category in categories %}
+        <option value="{{ category[0] | slugify }}">{{ category[0] }} ({{ category[1] | size }})</option>
+      {% endfor %}
+    </select>
     <div class="category-links">
       <button class="is-active" data-category="all" type="button">All <span>{{ site.posts | size }}</span></button>
-      {% assign categories = site.categories | sort %}
       {% for category in categories %}
         <button data-category="{{ category[0] | slugify }}" type="button">{{ category[0] }} <span>{{ category[1] | size }}</span></button>
       {% endfor %}
@@ -38,6 +45,7 @@ title: Writing
     const buttons = [...document.querySelectorAll('[data-category]')];
     const posts = [...document.querySelectorAll('#post-list > li')];
     const count = document.querySelector('#post-count');
+    const categorySelect = document.querySelector('#category-select');
     const slugify = value => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
     const showCategory = category => {
@@ -54,6 +62,7 @@ title: Writing
         }
       });
       buttons.forEach(button => button.classList.toggle('is-active', button.dataset.category === category));
+      if (categorySelect) categorySelect.value = category;
       if (count) count.textContent = `${visible} ${visible === 1 ? 'post' : 'posts'}`;
     };
 
@@ -64,6 +73,11 @@ title: Writing
       history.replaceState(null, '', category === 'all' ? location.pathname : `#category-${category}`);
       showCategory(category);
     }));
+    categorySelect?.addEventListener('change', () => {
+      const category = categorySelect.value;
+      history.replaceState(null, '', category === 'all' ? location.pathname : `#category-${category}`);
+      showCategory(category);
+    });
 
     const showHashCategory = () => {
       const hashCategory = location.hash.replace('#category-', '');
