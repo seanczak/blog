@@ -10,7 +10,7 @@ title: Writing
         <li data-categories="{{ post.categories | join: '|' }}">
           <article class="post-card">
             {% if post.categories.size > 0 %}
-              <p class="post-categories">{% for category in post.categories %}<span>{{ category }}</span>{% endfor %}</p>
+              <p class="post-categories">{% for category in post.categories %}<a data-category="{{ category | slugify }}" href="#category-{{ category | slugify }}">{{ category }}</a>{% endfor %}</p>
             {% endif %}
             <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
             {% if post.description %}<p>{{ post.description }}</p>{% endif %}
@@ -57,16 +57,19 @@ title: Writing
       if (count) count.textContent = `${visible} ${visible === 1 ? 'post' : 'posts'}`;
     };
 
-    buttons.forEach(button => button.addEventListener('click', () => {
-      history.replaceState(null, '', button.dataset.category === 'all' ? location.pathname : `#category-${button.dataset.category}`);
-      showCategory(button.dataset.category);
+    buttons.forEach(button => button.addEventListener('click', event => {
+      event.preventDefault();
+      const requestedCategory = button.dataset.category;
+      const category = requestedCategory !== 'all' && button.classList.contains('is-active') ? 'all' : requestedCategory;
+      history.replaceState(null, '', category === 'all' ? location.pathname : `#category-${category}`);
+      showCategory(category);
     }));
 
-    const hashCategory = location.hash.replace('#category-', '');
-    if (buttons.some(button => button.dataset.category === hashCategory)) {
-      showCategory(hashCategory);
-    } else {
-      showCategory('all');
-    }
+    const showHashCategory = () => {
+      const hashCategory = location.hash.replace('#category-', '');
+      showCategory(buttons.some(button => button.dataset.category === hashCategory) ? hashCategory : 'all');
+    };
+    window.addEventListener('hashchange', showHashCategory);
+    showHashCategory();
   })();
 </script>
