@@ -30,7 +30,7 @@ h3 a:hover { color: #1e4d42; text-decoration: underline; }
 .post-categories { display: flex; flex-wrap: wrap; gap: .45rem; margin: 0 0 .8rem; }
 .post-categories span, .post-categories a, .post-categories button { border: 1px solid #c6a34b; border-radius: 999px; color: #78612a; font-family: ui-sans-serif, system-ui, sans-serif; font-size: .7rem; font-weight: 650; letter-spacing: .05em; padding: .16rem .5rem; text-decoration: none; text-transform: uppercase; }
 .post-categories button { background: transparent; cursor: pointer; }
-.post-categories a:hover, .post-categories a.is-active, .post-categories button:hover, .post-categories button.is-active { background: #c6a34b; color: #24282b; }
+.post-categories a.is-active, .post-categories button.is-active { background: #c6a34b; color: #24282b; }
 .category-nav, .article-nav { align-self: start; border-left: 1px solid #cbd1d4; padding-left: 1.25rem; position: sticky; top: 1.5rem; }
 .article-nav { border-left: 0; padding-left: 0; }
 .category-nav h2 { margin-bottom: .8rem; }
@@ -71,12 +71,18 @@ footer { border-top: 2px solid #c6a34b; color: #6b767b; font-family: ui-sans-ser
   .category-links button, .article-nav a { color: #bdc7ca; }
   .article-nav a.is-active { border-left-color: #44c5c9; color: #44c5c9; }
   .post-categories span, .post-categories a, .post-categories button { border-color: #bda85d; color: #d7c882; }
-  .post-categories a:hover, .post-categories a.is-active, .post-categories button:hover, .post-categories button.is-active { background: #bda85d; color: #1f2528; }
+  .post-categories a.is-active, .post-categories button.is-active { background: #bda85d; color: #1f2528; }
   pre { background: #2d363a; }
 }
 @media (max-width: 56rem) {
   .post-layout { grid-template-columns: minmax(0, 1fr); }
   .article-nav { display: none; }
+}
+@media (hover: hover) {
+  .post-categories a:hover, .post-categories button:hover { background: #c6a34b; color: #24282b; }
+}
+@media (hover: hover) and (prefers-color-scheme: dark) {
+  .post-categories a:hover, .post-categories button:hover { background: #bda85d; color: #1f2528; }
 }
 @media (max-width: 32rem) {
   .site-header nav { gap: .7rem; }
