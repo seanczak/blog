@@ -7,10 +7,12 @@ title: Writing
   <section class="writing" aria-label="Posts">
     <ol class="post-list" id="post-list">
       {% for post in site.posts %}
-        <li data-categories="{{ post.categories | join: '|' }}">
+        {% capture post_categories %}{% include post-categories.html post=post %}{% endcapture %}
+        {% assign post_categories = post_categories | split: '|' %}
+        <li data-categories="{{ post_categories | join: '|' }}">
           <article class="post-card">
-            {% if post.categories.size > 0 %}
-              <p class="post-categories">{% for category in post.categories %}<a data-category="{{ category | slugify }}" href="#category-{{ category | slugify }}">{{ category }}</a>{% endfor %}</p>
+            {% if post_categories.size > 0 %}
+              <p class="post-categories">{% for category in post_categories %}<a data-category="{{ category | slugify }}" href="#category-{{ category | slugify }}">{{ category }}</a>{% endfor %}</p>
             {% endif %}
             <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
             {% if post.description %}<p>{{ post.description }}</p>{% endif %}
@@ -24,17 +26,26 @@ title: Writing
   <aside class="category-nav" aria-label="Post categories">
     <h2>Categories</h2>
     <label class="visually-hidden" for="category-select">Filter posts by category</label>
+    {% comment %}Built from post-categories.html rather than site.categories so directory-derived categories are excluded.{% endcomment %}
+    {% assign joined_categories = '' %}
+    {% for post in site.posts %}
+      {% capture post_categories %}{% include post-categories.html post=post %}{% endcapture %}
+      {% assign joined_categories = joined_categories | append: post_categories | append: '|' %}
+    {% endfor %}
+    {% assign category_occurrences = joined_categories | split: '|' %}
+    {% assign categories = category_occurrences | uniq | sort %}
     <select class="category-select" id="category-select">
       <option value="all">All ({{ site.posts | size }})</option>
-      {% assign categories = site.categories | sort %}
       {% for category in categories %}
-        <option value="{{ category[0] | slugify }}">{{ category[0] }} ({{ category[1] | size }})</option>
+        {% assign category_count = category_occurrences | where_exp: 'item', 'item == category' | size %}
+        <option value="{{ category | slugify }}">{{ category }} ({{ category_count }})</option>
       {% endfor %}
     </select>
     <div class="category-links">
       <button class="is-active" data-category="all" type="button">All <span>{{ site.posts | size }}</span></button>
       {% for category in categories %}
-        <button data-category="{{ category[0] | slugify }}" type="button">{{ category[0] }} <span>{{ category[1] | size }}</span></button>
+        {% assign category_count = category_occurrences | where_exp: 'item', 'item == category' | size %}
+        <button data-category="{{ category | slugify }}" type="button">{{ category }} <span>{{ category_count }}</span></button>
       {% endfor %}
     </div>
   </aside>
