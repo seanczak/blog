@@ -9,7 +9,6 @@ a { color: #087f86; text-underline-offset: .16em; }
 .site-header nav a:not(.site-title) { color: #555f64; text-decoration: none; }
 .site-header nav a:not(.site-title):hover { color: #087f86; text-decoration: underline; }
 .header-profile-link { display: flex; flex: 0 0 auto; }
-.header-profile-link:hover .header-profile { border-color: #087f86; }
 .header-profile { border: 1px solid #c6a34b; border-radius: 50%; flex: 0 0 auto; height: 4.2rem; object-fit: cover; width: 4.2rem; }
 main { padding: 4rem 0 6rem; }
 h1, h2, h3 { color: #1d2326; line-height: 1.08; }
@@ -92,7 +91,6 @@ footer { border-top: 2px solid #c6a34b; color: #6b767b; font-family: ui-sans-ser
   a { color: #44c5c9; }
   .site-header nav a:not(.site-title) { color: #bdc7ca; }
   .site-header nav a:not(.site-title):hover { color: #44c5c9; }
-  .header-profile-link:hover .header-profile { border-color: #44c5c9; }
   .post-card > p:not(.post-meta) { color: #bdc7ca; }
   .post-description { color: #bdc7ca; }
   .section-heading span, .post-meta, footer { color: #9eaaae; }
