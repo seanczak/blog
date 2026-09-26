@@ -8,6 +8,8 @@ a { color: #087f86; text-underline-offset: .16em; }
 .site-title { color: inherit; font-size: clamp(1.15rem, 2.5vw, 1.45rem); font-weight: 750; letter-spacing: -.035em; line-height: 1; margin-right: auto; text-decoration: none; }
 .site-header nav a:not(.site-title) { color: #555f64; text-decoration: none; }
 .site-header nav a:not(.site-title):hover { color: #087f86; text-decoration: underline; }
+.header-profile-link { display: flex; flex: 0 0 auto; }
+.header-profile-link:hover .header-profile { border-color: #087f86; }
 .header-profile { border: 1px solid #c6a34b; border-radius: 50%; flex: 0 0 auto; height: 4.2rem; object-fit: cover; width: 4.2rem; }
 main { padding: 4rem 0 6rem; }
 h1, h2, h3 { color: #1d2326; line-height: 1.08; }
@@ -80,6 +82,8 @@ h2[id], h3[id] { scroll-margin-top: 6rem; }
 .category-links a.is-subtopic + a:not(.is-subtopic) { margin-top: .5rem; }
 pre { border-radius: .25rem; overflow-x: auto; padding: 1rem; background: #dfe4e6; }
 img { height: auto; max-width: 100%; }
+/* Block images so a caption on the next line sits under the image, not beside it. */
+.post img { display: block; margin-bottom: .35rem; }
 footer { border-top: 2px solid #c6a34b; color: #6b767b; font-family: ui-sans-serif, system-ui, sans-serif; font-size: .78rem; padding: 1.5rem 0; }
 @media (prefers-color-scheme: dark) {
   body { background: #1f2528; color: #e1e6e8; }
@@ -88,6 +92,7 @@ footer { border-top: 2px solid #c6a34b; color: #6b767b; font-family: ui-sans-ser
   a { color: #44c5c9; }
   .site-header nav a:not(.site-title) { color: #bdc7ca; }
   .site-header nav a:not(.site-title):hover { color: #44c5c9; }
+  .header-profile-link:hover .header-profile { border-color: #44c5c9; }
   .post-card > p:not(.post-meta) { color: #bdc7ca; }
   .post-description { color: #bdc7ca; }
   .section-heading span, .post-meta, footer { color: #9eaaae; }

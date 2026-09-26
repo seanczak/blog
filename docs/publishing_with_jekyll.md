@@ -1,6 +1,6 @@
 # Publishing with Jekyll
 
-How the blog is built, rendered and published, and why it's set up this way. For where ideas and their files live, see [content_curation.md](content_curation.md).
+How the blog is built and published, and why it's set up this way. For where ideas and their files live, see [content_curation.md](content_curation.md); for how the site looks and its pages behave, see [site_design.md](site_design.md).
 
 ## GitHub Pages
 
@@ -50,7 +50,7 @@ tags: [one-category, another-category]
 - **Categories go in `tags`, not `categories`.** Jekyll adds every folder above a nested `_posts/` (for example `content`, `statistics`, `power_analysis`) to a post's `categories` and merges them with the front matter, so the real ones can't be picked out. `tags` is never derived from folders. The site still labels them "Categories".
 - Use one to three tags. Agents ask the human for them and don't invent new ones.
 - `description` and `tags` drive the archive and its filter. `description` is also the post's default blurb on the landing page.
-- A post appears on the landing page only once it's listed in `jekyll/_data/tree.yml` (see below). Posts sort newest first by `date`.
+- A post appears on the landing page only once it's listed in `jekyll/_data/tree.yml` (see [site_design.md](site_design.md)). Posts sort newest first by `date`.
 - `published: false` keeps a post in the repo but off the site. Remove the flag to publish.
 
 ### Headings and the table of contents
@@ -66,12 +66,3 @@ Internal links and assets must go through `relative_url` so they get the `/blog`
 ```
 
 Every generated figure or asset needs a checked-in reproducible script; see [content_curation.md](content_curation.md) for where `src/` and `img/` go.
-
-## Design and rendering
-
-- Quiet editorial style: grey base, turquoise (`#087f86`) for content links and interaction, opaque gold (`#c6a34b`) for 2px structural dividers and the portrait trim.
-- Header: portrait, name, then Topics / Archive / About / LinkedIn. Header links are charcoal, and turquoise only on hover.
-- Landing page (`/`): a topic tree of sections, groups and posts, with a sticky right-hand list of sections and their groups. Groups are native `<details>` elements, collapsed by default, and a group with no posts shows "Posts to come."; clicking a group title, or its link in the right-hand list, expands it. Structure, order and blurbs come from `jekyll/_data/tree.yml`, not from folders. Posts are referenced by `slug` (file name minus date); a `blurb` there overrides the post's `description`. A slug that matches no post is skipped and leaves an HTML comment in the page.
-- Archive (`/archive/`): chronological post list with a sticky right-hand Categories filter. No hero, no "Writing" heading, no card-heavy design.
-- Articles: categories appear beneath the title. The table of contents hides below a `56rem` viewport width.
-- Implement dynamic state programmatically and deterministically. Don't use DOM-position selectors (for example `:first-child`) for filtered or sorted state. Derive it from visible data and apply explicit classes.

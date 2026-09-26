@@ -3,7 +3,7 @@
 Workspace for exploring ideas and source for https://seanczak.github.io/blog/. GitHub Pages builds the site with Jekyll from `main`, so pushing to `main` publishes. The repo is public; private material goes in `notshared/`.
 
 - `content/<area>/<idea>/`: one directory per idea, with notes, an outline, and a nested `_posts/` for the published article.
-- `jekyll/`: layouts, CSS, images, homepage, About page, and local preview tooling.
+- `jekyll/`: layouts, CSS, images, landing page, archive, About page, the topic tree data, and local preview tooling.
 - `docs/`: repo conventions.
 - `notshared/`: gitignored private scratch space.
 - `_config.yml`: Jekyll config; stays at the root because GitHub Pages reads it there.
@@ -14,10 +14,11 @@ Agents read all of these at the start of every session. The entry point is [AGEN
 
 | Doc | Covers |
 |---|---|
-| [docs/agent_guidelines.md](docs/agent_guidelines.md) | how agents work here: role, context documents, numbers, figures, tools, git |
+| [docs/agent_guidelines.md](docs/agent_guidelines.md) | how agents work here: role, context documents, numbers, figures, keeping docs current, tools, git |
 | [docs/repo_structure.md](docs/repo_structure.md) | the repo root and keeping it clean |
 | [docs/content_curation.md](docs/content_curation.md) | idea directories: notes → outline → post, naming, what isn't tracked |
-| [docs/publishing_with_jekyll.md](docs/publishing_with_jekyll.md) | GitHub Pages, local preview, post front matter, design |
+| [docs/publishing_with_jekyll.md](docs/publishing_with_jekyll.md) | GitHub Pages, local preview, post front matter |
+| [docs/site_design.md](docs/site_design.md) | style, header, landing-page tree, archive and article pages |
 | [docs/writing_style.md](docs/writing_style.md) | how to write notes, outlines, posts, docs, and chat replies |
 | [docs/coding_style.md](docs/coding_style.md) | Python and SQL conventions |
 
