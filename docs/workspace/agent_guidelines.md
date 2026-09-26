@@ -27,7 +27,7 @@ Every image goes through the `make-figure` skill, not an improvised plot script 
 
 The docs in `docs/` are the record of how the repo works. A change to code, config, layout or a convention isn't finished until the doc that covers it says so.
 
-- Find the doc and section that own the topic (the table in `docs/repo_structure.md` maps them), and fold the change in there instead of appending a note elsewhere.
+- Find the doc and section that own the topic (the table in `docs/workspace/repo_structure.md` maps them), and fold the change in there instead of appending a note elsewhere.
 - Replace what the change made obsolete; don't leave the old and new rule side by side.
 - If no doc covers it, ask the human where it belongs.
 - Mention the doc edit when reporting the change.
@@ -46,4 +46,4 @@ Prefer whichever tool gets there with the least overhead.
 
 - There's no branching workflow for now; work is committed straight to `main`. That may change.
 - The repo is public, and a push to `main` publishes the site. Commit and push only when the human asks.
-- Commit messages follow `docs/coding_style.md`.
+- Commit messages follow `docs/style_guides/coding.md`.

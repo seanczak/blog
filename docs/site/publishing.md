@@ -1,11 +1,11 @@
 # Publishing with Jekyll
 
-How the blog is built and published, and why it's set up this way. For where ideas and their files live, see [content_curation.md](content_curation.md); for how the site looks and its pages behave, see [site_design.md](site_design.md).
+How the blog is built and published, and why it's set up this way. For where ideas and their files live, see [content_structure.md](../workspace/content_structure.md); for how the site looks and its pages behave, see [design.md](design.md).
 
 ## GitHub Pages
 
 - The site is https://seanczak.github.io/blog/, built by GitHub Pages from the repo root on `main` (Settings → Pages → Deploy from a branch → `main`, `/(root)`). Pushing to `main` publishes. There's no CI workflow and no local build step in the deploy.
-- Pages uses its legacy builder, which runs **Jekyll 3.10 in safe mode** with the `github-pages` gem's plugins. Local preview pins the same versions through [`jekyll/Gemfile`](../jekyll/Gemfile) (`github-pages` 232, Jekyll 3.10.0, kramdown 2.4.0 as of September 2026; compare with https://pages.github.com/versions.json). (If matching Pages locally stops working, the fallback is a GitHub Actions build that runs whatever Jekyll version is used locally.)
+- Pages uses its legacy builder, which runs **Jekyll 3.10 in safe mode** with the `github-pages` gem's plugins. Local preview pins the same versions through [`jekyll/Gemfile`](../../jekyll/Gemfile) (`github-pages` 232, Jekyll 3.10.0, kramdown 2.4.0 as of September 2026; compare with https://pages.github.com/versions.json). (If matching Pages locally stops working, the fallback is a GitHub Actions build that runs whatever Jekyll version is used locally.)
 - Safe mode ignores symlinks and third-party plugins. Don't rely on either.
 - The visible name is **Sean Fronczak**. The GitHub username and base path stay `seanczak` and `/blog`.
 
@@ -35,7 +35,7 @@ There's no top-level `_posts/`. The original placeholder posts were deleted, and
 
 ## Writing a post
 
-Where a post lives, how it's named and how it grows out of notes and an outline are covered in [content_curation.md](content_curation.md). This section covers what Jekyll needs from the post file itself: `content/<area>/<idea>/_posts/YYYY-MM-DD-short-title.md` with this front matter:
+Where a post lives, how it's named and how it grows out of notes and an outline are covered in [content_structure.md](../workspace/content_structure.md). This section covers what Jekyll needs from the post file itself: `content/<area>/<idea>/_posts/YYYY-MM-DD-short-title.md` with this front matter:
 
 ```md
 ---
@@ -50,7 +50,7 @@ tags: [one-category, another-category]
 - **Categories go in `tags`, not `categories`.** Jekyll adds every folder above a nested `_posts/` (for example `content`, `statistics`, `power_analysis`) to a post's `categories` and merges them with the front matter, so the real ones can't be picked out. `tags` is never derived from folders. The site still labels them "Categories".
 - Use one to three tags. Agents ask the human for them and don't invent new ones.
 - `description` and `tags` drive the archive and its filter. `description` is also the post's default blurb on the landing page.
-- A post appears on the landing page only once it's listed in `jekyll/_data/tree.yml` (see [site_design.md](site_design.md)). Posts sort newest first by `date`.
+- A post appears on the landing page only once it's listed in `jekyll/_data/tree.yml` (see [design.md](design.md)). Posts sort newest first by `date`.
 - `published: false` keeps a post in the repo but off the site. Remove the flag to publish.
 
 ### Headings and the table of contents
@@ -65,4 +65,15 @@ Internal links and assets must go through `relative_url` so they get the `/blog`
 ![Power curves]({{ '/content/statistics/power_analysis/img/power-curves.svg' | relative_url }})
 ```
 
-Every generated figure or asset needs a checked-in reproducible script; see [content_curation.md](content_curation.md) for where `src/` and `img/` go.
+#### Renaming breaks links
+
+Several link targets are derived from names, so renaming the name silently moves the target. Before renaming any of these, grep `content/`, `docs/` and `jekyll/` for references to the old form and update them in the same change:
+
+| Renamed | Link target it changes | What breaks |
+|---|---|---|
+| Post file name or `date` | Post URL `/:year/:month/:day/:title/`, and the `post_url` name | Links and bookmarks to the post. A stale `post_url` fails the build; a hard-coded URL 404s silently. |
+| Section or group `title` in `jekyll/_data/tree.yml` | Landing-page anchor `#<section-slug>--<group-slug>` | Links such as `{{ '/#ai-workflow--coding-with-ai' \| relative_url }}` still open the page but no longer jump to or expand the group. |
+| A post heading | Its table-of-contents anchor, unless it has an explicit `{#id}` | `#section` links into the post. |
+| An idea directory or image file | Asset paths under `/content/...` | Images in the post 404. |
+
+Every generated figure or asset needs a checked-in reproducible script; see [content_structure.md](../workspace/content_structure.md) for where `src/` and `img/` go.

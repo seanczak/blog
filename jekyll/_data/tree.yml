@@ -5,6 +5,8 @@
 # A post left out of this file still appears on /archive/.
 # Sections get a blurb only when they have no groups; otherwise blurbs go on groups.
 # Wrap a value in double quotes if it contains ": " or starts with a quote or #.
+# Section and group titles become landing-page anchors that posts link to; see
+# "Renaming breaks links" in docs/site/publishing.md before renaming one.
 
 - title: AI workflow
   groups:
@@ -15,6 +17,8 @@
           blurb: How prompt caching shapes the cost of a long agent session.
     - title: Coding with AI
       blurb: Posts on maximizing velocity with coding agents while keeping cost, quality and maintainability in check.
+      posts:
+        - slug: agentic-coding-for-ml-pipelines-part-1
 
 - title: Statistics
   groups:

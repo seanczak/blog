@@ -1,5 +1,5 @@
 # Pins the same Jekyll and plugin versions GitHub Pages uses (Jekyll 3.10).
-# Preview with: jekyll/serve.sh (see docs/publishing_with_jekyll.md).
+# Preview with: jekyll/serve.sh (see docs/site/publishing.md).
 source "https://rubygems.org"
 
 gem "github-pages", group: :jekyll_plugins

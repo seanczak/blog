@@ -14,13 +14,13 @@ Agents read all of these at the start of every session. The entry point is [AGEN
 
 | Doc | Covers |
 |---|---|
-| [docs/agent_guidelines.md](docs/agent_guidelines.md) | how agents work here: role, context documents, numbers, figures, keeping docs current, tools, git |
-| [docs/repo_structure.md](docs/repo_structure.md) | the repo root and keeping it clean |
-| [docs/content_curation.md](docs/content_curation.md) | idea directories: notes → outline → post, naming, what isn't tracked |
-| [docs/publishing_with_jekyll.md](docs/publishing_with_jekyll.md) | GitHub Pages, local preview, post front matter |
-| [docs/site_design.md](docs/site_design.md) | style, header, landing-page tree, archive and article pages |
-| [docs/writing_style.md](docs/writing_style.md) | how to write notes, outlines, posts, docs, and chat replies |
-| [docs/coding_style.md](docs/coding_style.md) | Python and SQL conventions |
+| [docs/workspace/agent_guidelines.md](docs/workspace/agent_guidelines.md) | how agents work here: role, context documents, numbers, figures, keeping docs current, tools, git |
+| [docs/workspace/repo_structure.md](docs/workspace/repo_structure.md) | the repo root and keeping it clean |
+| [docs/workspace/content_structure.md](docs/workspace/content_structure.md) | idea directories: notes → outline → post, naming, what isn't tracked |
+| [docs/style_guides/writing.md](docs/style_guides/writing.md) | how to write notes, outlines, posts, docs, and chat replies |
+| [docs/style_guides/coding.md](docs/style_guides/coding.md) | Python and SQL conventions |
+| [docs/site/publishing.md](docs/site/publishing.md) | GitHub Pages, local preview, post front matter |
+| [docs/site/design.md](docs/site/design.md) | style, header, landing-page tree, archive and article pages |
 
 ## Preview locally
 

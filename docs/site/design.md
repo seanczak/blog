@@ -1,6 +1,6 @@
 # Site Design
 
-How the site looks and how its pages behave. How it's built and published, and what a post file needs, is in [publishing_with_jekyll.md](publishing_with_jekyll.md).
+How the site looks and how its pages behave. How it's built and published, and what a post file needs, is in [publishing.md](publishing.md).
 
 ## Style
 

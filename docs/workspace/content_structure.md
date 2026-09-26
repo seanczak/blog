@@ -1,10 +1,10 @@
-# Content Curation
+# Content Structure
 
 ## Purpose
 
 The repo serves as both a lab bench and a publishing source. The bulk of it is in-progress thinking; only what sits in a `_posts/` folder is finished and meant to be taken at face value. The rest (drafts, scratch work, supporting evidence) shows how a post came to be, not what it concludes.
 
-This doc is about `content/`, where ideas are kept and refined. The repo root is covered in [repo_structure.md](repo_structure.md). Site building and serving (`_config.yml`, `jekyll/`, post front matter, GitHub Pages) is covered in [publishing_with_jekyll.md](publishing_with_jekyll.md).
+This doc is about `content/`, where ideas are kept and refined. The repo root is covered in [repo_structure.md](repo_structure.md). Site building and serving (`_config.yml`, `jekyll/`, post front matter, GitHub Pages) is covered in [publishing.md](../site/publishing.md).
 
 ## Levels of refinement
 
@@ -44,7 +44,7 @@ content/
 
 - **Area and idea directories:** brief `snake_case` names describing the subject, so the contents are guessable from the name. No date in the name; the post's filename holds the date.
 - **Ordered ideas:** when the ideas in a directory are meant to be read in sequence, prefix each idea directory with a two-digit index (`00_production_code_for_ds`, `01_dry`) so the file tree lists them in order. Display order on the site still comes from `jekyll/_data/tree.yml`.
-- **Post files:** `YYYY-MM-DD-short-title.md`. Front matter is described in [publishing_with_jekyll.md](publishing_with_jekyll.md#writing-a-post).
+- **Post files:** `YYYY-MM-DD-short-title.md`. Front matter is described in [publishing.md](../site/publishing.md#writing-a-post).
 
 ### Inside an idea directory
 
@@ -70,4 +70,4 @@ To resume an idea in a new session, point the agent at its directory and have it
 - `notshared/` is ignored at any depth (repo root, area or idea). It holds data files (CSV, pickle, JSON extracts), private drafts, and anything copied in from elsewhere that can't be public.
 - `data/` is ignored at any depth too, as a backstop. `notshared/` is still the place for data.
 - New data files go to `notshared/`. Writing one to a tracked path requires the human's explicit approval.
-- The ignore rules are themselves a convention. Changes to them are agreed with the human and made together, in one change, across [`.gitignore`](../.gitignore), the `exclude` list in [`_config.yml`](../_config.yml), this doc and [publishing_with_jekyll.md](publishing_with_jekyll.md).
+- The ignore rules are themselves a convention. Changes to them are agreed with the human and made together, in one change, across [`.gitignore`](../../.gitignore), the `exclude` list in [`_config.yml`](../../_config.yml), this doc and [publishing.md](../site/publishing.md).
