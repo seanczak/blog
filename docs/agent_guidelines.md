@@ -21,7 +21,7 @@ Quantities derived from data (totals, shares, rates, differences) are always com
 
 ## Figures
 
-Charts, plots and PNGs go through the `make-figure` skill, not an improvised plot script.
+Every image goes through the `make-figure` skill, not an improvised plot script or PIL call: charts and plots, and also photos, diagrams and images brought in from elsewhere or converted in Python. The skill covers where they go and how they're compressed.
 
 ## Keeping the docs current
 

@@ -17,4 +17,4 @@ Skills live in `.claude/skills/<name>/SKILL.md`. Claude Code discovers them auto
 
 | Skill | Use when |
 |---|---|
-| `make-figure` | a chart, plot or figure is needed from a data file. It saves a rerunnable plot script in the idea's `src/` and a compressed PNG in its `img/` |
+| `make-figure` | any image goes into an idea's `img/`: a chart from a data file (it also saves a rerunnable plot script in `src/`), or a photo, diagram or imported figure. Every image is compressed with its helper |

@@ -11,10 +11,10 @@ IDEA_DIR = SCRIPT_PATH.parent.parent  # content/<area>/<idea>/
 REPO_ROOT = IDEA_DIR.parent.parent.parent  # repository root
 
 _helper_spec = importlib.util.spec_from_file_location(
-    "compress_pngs", REPO_ROOT / ".claude/skills/make-figure/compress_pngs.py"
+    "compress_images", REPO_ROOT / ".claude/skills/make-figure/compress_images.py"
 )
-compress_pngs = importlib.util.module_from_spec(_helper_spec)
-_helper_spec.loader.exec_module(compress_pngs)
+compress_images = importlib.util.module_from_spec(_helper_spec)
+_helper_spec.loader.exec_module(compress_images)
 
 DATA_PATH = IDEA_DIR / "notshared/<data_file>"
 FIGURE_PATH = IDEA_DIR / "img/<figure_name>.png"
@@ -41,7 +41,7 @@ def draw(frame_df: pd.DataFrame) -> plt.Figure:
 if __name__ == "__main__":
     fig = draw(read_source(DATA_PATH))
     FIGURE_PATH.parent.mkdir(exist_ok=True)
-    compress_pngs.save_png(fig, FIGURE_PATH)
+    compress_images.save_png(fig, FIGURE_PATH)
     # Print every number the caption will quote, then the file size.
     size_kb = FIGURE_PATH.stat().st_size / 1024
     print(f"wrote {FIGURE_PATH.relative_to(REPO_ROOT)} ({size_kb:.1f} KB)")

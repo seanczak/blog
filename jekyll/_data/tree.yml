@@ -23,10 +23,18 @@
         - slug: power-analysis
     - title: Causal inference
       blurb: Estimating effects when randomization isn't available.
+    - title: 2020 election series
+      posts:
+        - slug: calling-elections-early-fake-news-or-statistics
+        - slug: what-in-the-world-happened-in-virginia-tuesday-night
+        - slug: how-swing-able-is-texas-anyways
+        - slug: what-took-so-long-in-the-swing-states
 
 - title: Personal finance
   groups:
     - title: Retirement
+      posts:
+        - slug: an-approximation-for-financial-independence
     - title: Budgeting
 
 - title: About this blog
