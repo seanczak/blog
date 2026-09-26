@@ -1,0 +1,12 @@
+{% comment %}Sidebar of buttons that jump to each section and group; behavior in topic-tree.js.{% endcomment %}
+<aside class="category-nav" aria-label="Topics">
+  <h2>Topics</h2>
+  <nav class="category-links">
+    {% for section in site.data.tree %}
+      <button type="button" data-target="{{ section.id }}">{{ section.title }}</button>
+      {% for group in section.groups %}
+        <button class="is-subtopic" type="button" data-target="{{ group.id }}">{{ group.title }}</button>
+      {% endfor %}
+    {% endfor %}
+  </nav>
+</aside>

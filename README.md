@@ -3,7 +3,7 @@
 Workspace for exploring ideas and source for https://seanczak.github.io/blog/. GitHub Pages builds the site with Jekyll from `main`, so pushing to `main` publishes. The repo is public; private material goes in `notshared/`.
 
 - `content/<area>/<idea>/`: one directory per idea, with notes, an outline, and a nested `_posts/` for the published article.
-- `jekyll/`: layouts, CSS, images, landing page, archive, About page, the topic tree data, and local preview tooling.
+- `jekyll/`: layouts, includes, Sass, scripts, images, the landing page, archive, About and 404 pages, site data, and local preview tooling.
 - `docs/`: repo conventions.
 - `notshared/`: gitignored private scratch space.
 - `_config.yml`: Jekyll config; stays at the root because GitHub Pages reads it there.

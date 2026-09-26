@@ -1,0 +1,18 @@
+{% comment %}Category filter: buttons on wide screens, a <select> on narrow ones; behavior in archive-filter.js.{% endcomment %}
+{% assign categories = site.tags | sort %}
+<aside class="category-nav" aria-label="Post categories">
+  <h2>Categories</h2>
+  <label class="visually-hidden" for="category-select">Filter posts by category</label>
+  <select class="category-select" id="category-select">
+    <option value="all">All ({{ site.posts | size }})</option>
+    {% for category in categories %}
+      <option value="{{ category[0] | slugify }}">{{ category[0] }} ({{ category[1] | size }})</option>
+    {% endfor %}
+  </select>
+  <div class="category-links">
+    <button class="is-active" data-category="all" type="button">All <span>{{ site.posts | size }}</span></button>
+    {% for category in categories %}
+      <button data-category="{{ category[0] | slugify }}" type="button">{{ category[0] }} <span>{{ category[1] | size }}</span></button>
+    {% endfor %}
+  </div>
+</aside>

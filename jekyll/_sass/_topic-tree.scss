@@ -1,0 +1,23 @@
+// Landing page: sections, collapsible groups and their posts.
+.tree-section { border-top: 2px solid var(--gold); padding: 2rem 0 1rem; scroll-margin-top: 1.5rem; }
+.tree-section:first-child { border-top: 0; padding-top: .5rem; }
+.tree-section-title { font-family: $serif; font-size: clamp(1.55rem, 4vw, 2.1rem); letter-spacing: -.035em; margin: 0 0 .4rem; }
+.tree-blurb { color: var(--muted); margin: 0 0 1rem; max-width: 38rem; }
+.tree-group { border-left: 1px solid var(--rule); margin: 1.5rem 0 1.5rem .3rem; padding-left: 1.25rem; scroll-margin-top: 1.5rem; }
+.tree-group .tree-blurb { font-size: .95rem; }
+.tree-group-title { color: var(--group-title); font-family: $serif; font-size: clamp(1.2rem, 2.6vw, 1.4rem); letter-spacing: -.02em; margin: 0 0 .35rem; }
+.tree-group summary { cursor: pointer; list-style: none; padding-left: 1.1rem; position: relative; }
+.tree-group summary::-webkit-details-marker { display: none; }
+.tree-group summary::before { border-bottom: 2px solid currentColor; border-right: 2px solid currentColor; content: ""; height: .45rem; left: 0; position: absolute; top: .55rem; transform: rotate(-45deg); transition: transform .15s; width: .45rem; }
+.tree-group[open] summary::before { transform: rotate(45deg); }
+.tree-group summary:hover .tree-group-title { color: var(--group-title-hover); text-shadow: 0 0 .6px currentColor; }
+.tree-empty { color: var(--subtle); font-size: .95rem; font-style: italic; margin: 0 0 .9rem 1.1rem; }
+.tree-posts { list-style: none; margin: 0 0 0 1.1rem; padding: 0; }
+.tree-posts li { margin: 0 0 .9rem; }
+.tree-posts a { font-weight: 700; text-decoration: none; }
+.tree-posts a:hover { text-decoration: underline; }
+.tree-posts p { color: var(--muted); font-size: .95rem; margin: .1rem 0 0; max-width: 38rem; }
+
+@media (max-width: $narrow) {
+  .topic-tree + .category-nav { display: none; }
+}

@@ -1,0 +1,15 @@
+// Site header (portrait, name, navigation) and footer.
+.site-header, main, footer { margin: auto; width: #{"min(100% - 2.5rem, #{$page-width})"}; }
+.site-header { border-bottom: 2px solid var(--gold); padding: .9rem 0; }
+.site-header nav { align-items: center; display: flex; font-family: $sans; font-size: clamp(1rem, 2vw, 1.2rem); gap: 1rem; letter-spacing: -.015em; }
+.site-header nav a:not(.site-title) { color: var(--muted); text-decoration: none; }
+.site-header nav a:not(.site-title):hover { color: var(--accent); text-decoration: underline; }
+.site-title { color: inherit; font-size: clamp(1.15rem, 2.5vw, 1.45rem); font-weight: 750; letter-spacing: -.035em; line-height: 1; margin-right: auto; text-decoration: none; }
+.header-profile-link { display: flex; flex: 0 0 auto; }
+.header-profile { border: 1px solid var(--gold); border-radius: 50%; flex: 0 0 auto; height: 4.2rem; object-fit: cover; width: 4.2rem; }
+footer { border-top: 2px solid var(--gold); color: var(--subtle); font-family: $sans; font-size: .78rem; padding: 1.5rem 0; }
+
+@media (max-width: $phone) {
+  .site-header nav { gap: .7rem; }
+  .header-profile { height: 3.5rem; width: 3.5rem; }
+}

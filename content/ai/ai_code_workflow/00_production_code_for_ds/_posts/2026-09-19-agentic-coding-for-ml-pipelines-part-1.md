@@ -18,7 +18,7 @@ So in an agentic coding world the fundamentals of software engineering are incre
 
 ## Introducing the series
 
-[This series]({{ '/#ai-workflow--coding-with-ai' | relative_url }}) covers how I wrangle agents into writing maintainable, extendable code. This article starts with a few small readability tips — quick ways to clean up code. The follow-ups each take a single topic that's important enough to warrant its own article:
+[This series]({{ '/#ai-coding' | relative_url }}) covers how I wrangle agents into writing maintainable, extendable code. This article starts with a few small readability tips — quick ways to clean up code. The follow-ups each take a single topic that's important enough to warrant its own article:
 
 - **Part 2: DRY / write it once** — keeping the agent from repeating logic or hard-coding strings and parameters inline. Define each thing in one place; then a change (or building off that logic) only has to happen in that single spot, and everything else pulls from it.
 - **Part 3: Principled organization** — singly-responsible functions structured around separation of concerns and generalization. The payoff: code that's easy to traverse and debug, where complex functionality gets built by reusing existing code rather than adding more spaghetti.

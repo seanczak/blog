@@ -8,21 +8,15 @@
     <link rel="stylesheet" href="{{ '/jekyll/assets/css/style.css' | relative_url }}">
   </head>
   <body>
-    <header class="site-header">
-      <nav>
-        <a class="header-profile-link" href="{{ '/' | relative_url }}"><img class="header-profile" src="{{ '/jekyll/assets/images/sean-fronczak.png' | relative_url }}" alt="Sean Fronczak, home"></a>
-        <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-        <a href="{{ '/' | relative_url }}">Topics</a>
-        <a href="{{ '/archive/' | relative_url }}">Archive</a>
-        <a href="{{ '/about/' | relative_url }}">About</a>
-        <a href="https://www.linkedin.com/in/sean-fronczak/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-      </nav>
-    </header>
+    {% include site-header.html %}
     <main>
       {{ content }}
     </main>
     <footer>
-      <span>© {{ site.time | date: '%Y' }} Sean Fronczak</span>
+      <span>© {{ site.time | date: '%Y' }} {{ site.title }}</span>
     </footer>
+    {% comment %}A page or layout names its behavior in front matter: `script: <file name without .js>`.{% endcomment %}
+    {% assign script = page.script | default: layout.script %}
+    {% if script %}<script src="{{ '/jekyll/assets/js/' | append: script | append: '.js' | relative_url }}" defer></script>{% endif %}
   </body>
 </html>

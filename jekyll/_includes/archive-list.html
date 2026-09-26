@@ -1,0 +1,15 @@
+{% comment %}Every post, newest first; filtered by archive-filter.js.{% endcomment %}
+<section class="writing" aria-label="Posts">
+  <ol class="post-list" id="post-list">
+    {% for post in site.posts %}
+      <li data-categories="{{ post.tags | join: '|' }}">
+        <article class="post-card">
+          {% include category-pills.html categories=post.tags filter_in_place=true %}
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+          <p class="post-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time></p>
+        </article>
+      </li>
+    {% endfor %}
+  </ol>
+</section>

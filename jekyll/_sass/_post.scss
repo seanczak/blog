@@ -1,0 +1,25 @@
+// Article page: header, body, images and the generated table of contents.
+.post-layout { display: grid; gap: 4rem; grid-template-columns: minmax(0, 1fr) 12rem; }
+.post-layout--plain { grid-template-columns: minmax(0, 1fr); }
+.post > header { margin-bottom: 2.5rem; }
+.post > header h1 { font-size: clamp(2rem, 4vw, 3.1rem); max-width: none; }
+.post-description { color: var(--muted); font-size: 1.2rem; line-height: 1.5; margin: .8rem 0 1rem; max-width: 48rem; }
+.post h2 { font-size: clamp(1.45rem, 3vw, 1.9rem); letter-spacing: -.035em; margin: 3.25rem 0 1rem; }
+.post h3 { font-family: $sans; font-size: clamp(1.05rem, 2vw, 1.2rem); letter-spacing: -.02em; margin: 2rem 0 .6rem; }
+// Block images so a caption on the next line sits under the image, not beside it.
+.post img { display: block; margin-bottom: .35rem; }
+
+.article-nav { align-self: start; position: sticky; top: 1.5rem; }
+.article-nav h2 { font-family: $sans; font-size: 1rem; letter-spacing: .02em; margin: 0 0 .8rem; }
+.article-nav nav { border-left: 1px solid var(--rule); display: grid; gap: .15rem; }
+.article-nav a { border-left: 2px solid transparent; color: var(--muted); font-family: $sans; font-size: .85rem; margin-left: var(--toc-indent, 0rem); padding: .15rem 0 .15rem .65rem; text-decoration: none; }
+.article-nav a:hover { color: var(--accent); }
+.article-nav a.is-active { border-left-color: var(--accent); color: var(--accent); font-weight: 700; }
+
+@media (max-width: $narrow) {
+  .post-layout { grid-template-columns: minmax(0, 1fr); }
+  .article-nav { display: none; }
+}
+@media (max-width: $phone) {
+  .post-layout { display: block; }
+}

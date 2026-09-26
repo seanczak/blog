@@ -9,6 +9,14 @@ timezone: America/Los_Angeles
 # Serving machinery lives in jekyll/; posts live in content/<area>/<idea>/_posts/.
 layouts_dir: jekyll/_layouts
 data_dir: jekyll/_data
+includes_dir: jekyll/_includes
+sass:
+  sass_dir: jekyll/_sass
+  style: compressed
+
+# Whitelisted on GitHub Pages. Lets a moved post keep its old URL via `redirect_from:`.
+plugins:
+  - jekyll-redirect-from
 
 exclude:
   - notshared

@@ -1,0 +1,11 @@
+{% comment %}A post's categories as pills linking to the filtered archive.
+Categories are front-matter `tags` because Jekyll adds post directory names to `categories`.
+Pass `categories` (a list) and optionally `filter_in_place=true` on the archive itself.{% endcomment %}
+{% if include.categories.size > 0 %}
+  <p class="post-categories">
+    {%- for category in include.categories -%}
+      {%- assign slug = category | slugify -%}
+      <a {% if include.filter_in_place %}data-category="{{ slug }}" {% endif %}href="{{ '/archive/' | relative_url }}#category-{{ slug }}">{{ category }}</a>
+    {%- endfor -%}
+  </p>
+{% endif %}

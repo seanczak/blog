@@ -20,7 +20,7 @@ How the blog is built and published, and why it's set up this way. For where ide
 | Path | Role | Why it's there |
 |---|---|---|
 | `_config.yml` | Site config | Pages only reads it from the repo root. |
-| `jekyll/` | Everything that serves the site: `_layouts/`, `_data/tree.yml` (landing-page topic tree), `assets/` (CSS, portrait), `index.md` (landing page), `archive.md`, `about.md`, plus the local tooling (`Gemfile`, `Gemfile.lock`, `serve.sh`) | Keeps serving machinery out of the way of the writing. `_config.yml` sets `layouts_dir: jekyll/_layouts` and `data_dir: jekyll/_data`. `index.md`, `archive.md` and `about.md` set their own `permalink`, so they're served at `/`, `/archive/` and `/about/`, not under `/jekyll/`. |
+| `jekyll/` | Everything that serves the site: `_layouts/` (page shells), `_includes/` (reusable fragments: header, topic tree, archive list, category filter and pills), `_data/` (`tree.yml` for the landing page, `navigation.yml` for header links), `_sass/` (one partial per component, compiled through `assets/css/style.scss`), `assets/js/` (one script per interactive page), `assets/images/`, the pages `index.md`, `archive.md`, `about.md`, `404.md`, plus the local tooling (`Gemfile`, `Gemfile.lock`, `serve.sh`) | Keeps serving machinery out of the way of the writing. `_config.yml` sets `layouts_dir`, `includes_dir`, `data_dir` and `sass.sass_dir` to these folders. `index.md`, `archive.md`, `about.md` and `404.md` set their own `permalink`, so they're served at `/`, `/archive/`, `/about/` and `/404.html`, not under `/jekyll/`. |
 | `content/<area>/<idea>/_posts/` | Published posts | Jekyll picks up `_posts/` folders at any depth, so each post stays next to its notes. The folder must be named exactly `_posts`. |
 | `docs/` | Repo conventions | Excluded from the built site. |
 
@@ -67,12 +67,12 @@ Internal links and assets must go through `relative_url` so they get the `/blog`
 
 #### Renaming breaks links
 
-Several link targets are derived from names, so renaming the name silently moves the target. Before renaming any of these, grep `content/`, `docs/` and `jekyll/` for references to the old form and update them in the same change:
+Several link targets are derived from names, so renaming the name silently moves the target. A link to a missing heading (`#…`) just opens the page at the top; a link to a missing page gets the site's 404 page, which points to the topics and the archive. Before renaming any of these, grep `content/`, `docs/` and `jekyll/` for references to the old form and update them in the same change:
 
 | Renamed | Link target it changes | What breaks |
 |---|---|---|
-| Post file name or `date` | Post URL `/:year/:month/:day/:title/`, and the `post_url` name | Links and bookmarks to the post. A stale `post_url` fails the build; a hard-coded URL 404s silently. |
-| Section or group `title` in `jekyll/_data/tree.yml` | Landing-page anchor `#<section-slug>--<group-slug>` | Links such as `{{ '/#ai-workflow--coding-with-ai' \| relative_url }}` still open the page but no longer jump to or expand the group. |
+| Post file name or `date` | Post URL `/:year/:month/:day/:title/`, and the `post_url` name | Links and bookmarks to the post. A stale `post_url` fails the build. Once a post has been pushed, keep its old URL alive by adding it to the post's front matter as `redirect_from: [/yyyy/mm/dd/old-slug/]`. |
+| Section or group `id` in `jekyll/_data/tree.yml` (titles are safe to rename) | Landing-page anchor `/#<id>` | Links such as `{{ '/#ai-coding' \| relative_url }}` still open the page but no longer jump to or expand the group. |
 | A post heading | Its table-of-contents anchor, unless it has an explicit `{#id}` | `#section` links into the post. |
 | An idea directory or image file | Asset paths under `/content/...` | Images in the post 404. |
 

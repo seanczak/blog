@@ -1,0 +1,31 @@
+{% comment %}Sections, collapsible groups and their posts, from jekyll/_data/tree.yml.{% endcomment %}
+<div class="topic-tree">
+  {% for section in site.data.tree %}
+    <section class="tree-section" id="{{ section.id }}">
+      <h2 class="tree-section-title">{{ section.title }}</h2>
+      {% if section.blurb %}<p class="tree-blurb">{{ section.blurb }}</p>{% endif %}
+      {% for group in section.groups %}
+        <details class="tree-group" id="{{ group.id }}" name="topic-tree">
+          <summary>
+            <h3 class="tree-group-title">{{ group.title }}</h3>
+            {% if group.blurb %}<p class="tree-blurb">{{ group.blurb }}</p>{% endif %}
+          </summary>
+          {% if group.posts == nil or group.posts.size == 0 %}<p class="tree-empty">Posts to come.</p>{% endif %}
+          <ol class="tree-posts">
+            {% for entry in group.posts %}
+              {% assign post = site.posts | where: "slug", entry.slug | first %}
+              {% if post %}
+                <li>
+                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                  <p>{{ entry.blurb | default: post.description }}</p>
+                </li>
+              {% else %}
+                <!-- tree.yml: no post with slug "{{ entry.slug }}" -->
+              {% endif %}
+            {% endfor %}
+          </ol>
+        </details>
+      {% endfor %}
+    </section>
+  {% endfor %}
+</div>

@@ -1,0 +1,25 @@
+// Page-wide defaults: box model, typography, links, media, utilities.
+$serif: Georgia, "Times New Roman", serif;
+$sans: ui-sans-serif, system-ui, sans-serif;
+$page-width: 64rem;
+$narrow: 56rem;   // sidebars collapse below this
+$phone: 32rem;
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: $serif; font-size: 18px; line-height: 1.65; margin: 0; }
+main { padding: 4rem 0 6rem; }
+a { color: var(--accent); text-underline-offset: .16em; }
+h1, h2, h3 { color: var(--heading); line-height: 1.08; }
+h1 { font-size: clamp(3rem, 9vw, 5.5rem); letter-spacing: -.055em; margin: 0; max-width: 10ch; }
+h2 { font-family: $sans; font-size: 1.1rem; letter-spacing: .02em; margin: 0; }
+h3 { font-size: clamp(1.55rem, 4vw, 2.1rem); letter-spacing: -.035em; margin: .2rem 0 .55rem; }
+h2[id], h3[id] { scroll-margin-top: 6rem; }
+img { height: auto; max-width: 100%; }
+pre { background: var(--code-bg); border-radius: .25rem; overflow-x: auto; padding: 1rem; }
+// Date line on archive entries and post headers.
+.post-meta { color: var(--subtle); font-family: $sans; font-size: .76rem; font-weight: 650; letter-spacing: .09em; margin: 0; text-transform: uppercase; }
+.visually-hidden { clip: rect(0, 0, 0, 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; white-space: nowrap; width: 1px; }
+
+@media (max-width: $narrow) {
+  main { padding-top: 1.5rem; }
+}

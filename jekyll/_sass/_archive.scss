@@ -1,0 +1,5 @@
+// Archive: chronological post list.
+.post-list { list-style: none; margin: 0; padding: 0; }
+.post-list li { border-top: 2px solid var(--gold); padding: 2.1rem 0 2.3rem; }
+.post-list li.is-first-visible { border-top: 0; padding-top: .9rem; }
+.post-card > p:not(.post-meta) { color: var(--muted); margin: 0 0 1rem; max-width: 38rem; }

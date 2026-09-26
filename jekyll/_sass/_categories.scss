@@ -1,0 +1,12 @@
+// Category pills (on posts and in the archive) and the phone-width filter select.
+.post-categories { display: flex; flex-wrap: wrap; gap: .45rem; margin: 0 0 .8rem; }
+.post-categories a { border: 1px solid var(--gold); border-radius: 999px; color: var(--gold-text); font-family: $sans; font-size: .7rem; font-weight: 650; letter-spacing: .05em; padding: .16rem .5rem; text-decoration: none; text-transform: uppercase; }
+.post-categories a.is-active { background: var(--gold); color: var(--on-gold); }
+.category-select { display: none; }
+
+@media (hover: hover) {
+  .post-categories a:hover { background: var(--gold); color: var(--on-gold); }
+}
+@media (max-width: $narrow) {
+  .category-select { appearance: none; background: var(--bg); border: 1px solid var(--gold); border-radius: .25rem; color: var(--text); display: block; font: inherit; padding: .6rem .75rem; width: 100%; }
+}

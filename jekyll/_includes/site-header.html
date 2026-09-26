@@ -1,0 +1,13 @@
+<header class="site-header">
+  <nav>
+    <a class="header-profile-link" href="{{ '/' | relative_url }}"><img class="header-profile" src="{{ '/jekyll/assets/images/sean-fronczak.png' | relative_url }}" alt="{{ site.title }}, home"></a>
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    {% for item in site.data.navigation %}
+      {% if item.external %}
+        <a href="{{ item.url }}" rel="noopener noreferrer" target="_blank">{{ item.title }}</a>
+      {% else %}
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% endif %}
+    {% endfor %}
+  </nav>
+</header>

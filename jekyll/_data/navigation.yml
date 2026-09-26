@@ -1,0 +1,11 @@
+# Header links, in display order. `url` is site-relative (run through relative_url);
+# `external: true` opens in a new tab and is used as-is.
+- title: Topics
+  url: /
+- title: Archive
+  url: /archive/
+- title: About
+  url: /about/
+- title: LinkedIn
+  url: https://www.linkedin.com/in/sean-fronczak/
+  external: true

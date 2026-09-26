@@ -1,0 +1,16 @@
+// Two-column page with a sticky right-hand list of buttons (Topics, Archive).
+.archive-layout { display: grid; gap: 4rem; grid-template-columns: minmax(0, 1fr) 12rem; }
+.category-nav { align-self: start; border-left: 1px solid var(--rule); padding-left: 1.25rem; position: sticky; top: 1.5rem; }
+.category-nav h2 { margin-bottom: .8rem; }
+.category-links { display: grid; gap: .35rem; }
+.category-links button { background: none; border: 0; color: var(--muted); cursor: pointer; font-family: $sans; font-size: .85rem; padding: .15rem 0; text-align: left; }
+.category-links button:hover, .category-links button.is-active { color: var(--accent); }
+.category-links button span { color: var(--count); float: right; }
+.category-links button.is-subtopic { font-size: .8rem; padding-left: .9rem; }
+.category-links button.is-subtopic + button:not(.is-subtopic) { margin-top: .5rem; }
+
+@media (max-width: $narrow) {
+  .archive-layout { display: flex; flex-direction: column; gap: 2rem; }
+  .category-nav { border: 0; margin: 0; order: -1; padding: 0; position: static; }
+  .category-links { display: none; }
+}
