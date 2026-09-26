@@ -5,8 +5,20 @@ baseurl: "/blog"
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
 timezone: America/Los_Angeles
+
+# Serving machinery lives in jekyll/; posts live in content/<area>/<idea>/_posts/.
+layouts_dir: jekyll/_layouts
+
 exclude:
   - notshared
+  - docs
+  - README.md
+  - AGENTS.md
+  - CLAUDE.md
+  - jekyll/Gemfile
+  - jekyll/Gemfile.lock
+  - jekyll/vendor
+  - jekyll/serve.sh
   - "content/**/notes.md"
   - "content/**/outline.md"
   - "content/**/src"

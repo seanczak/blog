@@ -7,3 +7,10 @@ _site/
 **/notshared/*
 !**/notshared/.keep
 **/data/*
+
+# Bundler install (see Gemfile)
+vendor/
+.bundle/
+
+# Python bytecode
+__pycache__/

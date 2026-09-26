@@ -1,21 +1,20 @@
 # Blog
 
-## Preview and GitHub
+The docs below define how to work here. Each is listed with an `@` so it's loaded at the start of every session: Claude Code pulls `@` files in automatically, through this file and `CLAUDE.md`. Any other agent should read all of them before its first action.
 
-- Preview: `/home/sfronczak/snap/code/259/.local/share/gem/ruby/3.0.0/bin/jekyll serve --host 127.0.0.1 --port 4001`, then open `http://127.0.0.1:4001/blog/`.
-- GitHub CLI: `/home/sfronczak/.local/bin/gh`.
-- The visible name is **Sean Fronczak**; GitHub username/base path remain `seanczak` and `/blog`.
+Token counts were measured 2026-09-26 (Claude Code 2.1.283) as the extra startup context each import adds on its own. All six together add ~9.8K tokens on top of a ~29K baseline (~39K total). Re-measure with the method in `docs/agent_guidelines.md` after editing a doc.
 
-## Design and behavior
+- @docs/agent_guidelines.md (1.1K tokens): your role, reading context documents, numbers, figures, tools, git.
+- @docs/writing_style.md (1.4K tokens): register, structure, and voice for notes, outlines, posts, docs, and chat.
+- @docs/coding_style.md (2.4K tokens): Python and SQL conventions for code in `src/`.
+- @docs/repo_structure.md (0.8K tokens): the repo root and keeping it clean.
+- @docs/content_curation.md (2.1K tokens): idea directories in `content/`, notes → outline → post, naming, what gets tracked or kept in `notshared/`.
+- @docs/publishing_with_jekyll.md (2.4K tokens): post front matter, publishing, `_config.yml` and `jekyll/`, local preview, design.
 
-- Quiet editorial style: grey base, turquoise (`#087f86`) for content links/interaction, opaque gold (`#c6a34b`) for 2px structural dividers and portrait trim.
-- Header: portrait, name, then Posts / About / LinkedIn. Header links are charcoal and turquoise only on hover.
-- Homepage: chronological posts with a sticky right-hand Categories filter; no hero, “Writing” heading, or card-heavy design.
-- Articles: categories appear beneath the title; the right-hand “On this page” TOC is generated from `##`–`######` headings and hides below `56rem` viewport width.
-- Implement dynamic state programmatically and deterministically. Do not use DOM-position selectors (for example `:first-child`) for filtered/sorted state; derive it from visible data and apply explicit classes. Generated figures/assets need a checked-in reproducible script.
+## Skills
 
-## Posts
+Skills live in `.claude/skills/<name>/SKILL.md`. Claude Code discovers them automatically; other agents should open the matching `SKILL.md` when a request fits. There is one so far:
 
-Create `_posts/YYYY-MM-DD-short-title.md` with `layout`, `title`, `date`, `description`, and `categories` front matter. Descriptions and categories power the archive/filter. Ask the human for one to three categories if they have not specified them; do not invent them. Posts sort newest first by `date`.
-
-Use `##`–`######` headings for the automatic TOC; add an explicit heading ID only when a stable anchor is needed, e.g. `## Introduction {#introduction}`.
+| Skill | Use when |
+|---|---|
+| `make-figure` | a chart, plot or figure is needed from a data file. It saves a rerunnable plot script in the idea's `src/` and a compressed PNG in its `img/` |

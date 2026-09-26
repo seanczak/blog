@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
     <meta name="description" content="{{ page.description | default: site.description | escape }}">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/jekyll/assets/css/style.css' | relative_url }}">
   </head>
   <body>
     <header class="site-header">
       <nav>
-        <img class="header-profile" src="{{ '/assets/images/sean-fronczak.png' | relative_url }}" alt="Sean Fronczak">
+        <img class="header-profile" src="{{ '/jekyll/assets/images/sean-fronczak.png' | relative_url }}" alt="Sean Fronczak">
         <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
         <a href="{{ '/' | relative_url }}">Posts</a>
         <a href="{{ '/about/' | relative_url }}">About</a>

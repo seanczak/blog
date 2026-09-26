@@ -3,7 +3,7 @@ layout: post
 title: "Power Analysis: Plan Before You Run"
 date: 2026-09-02 10:00:00 -0700
 description: "A practical starting point for choosing a sample size before an experiment begins."
-categories: [experimentation, statistics]
+tags: [experimentation, statistics]
 ---
 
 ## Introduction {#introduction}
@@ -56,11 +56,11 @@ The first figure shows how quickly power rises as each group grows. With a modes
 
 ### Sample size changes the slope {#sample-size-changes-the-slope}
 
-![Power curves for three standardized effect sizes]({{ '/assets/images/power-analysis-power-curves.svg' | relative_url }})
+![Power curves for three standardized effect sizes]({{ '/content/statistics/power_analysis/img/power-analysis-power-curves.svg' | relative_url }})
 
 Holding the effect size fixed makes the trade-off even clearer. The second figure uses `d = 0.35` and asks how much power we want to buy. Moving from 80% to 90% is a meaningful increase in reliability—and a meaningful increase in sample size.
 
-![Required sample size by desired power]({{ '/assets/images/power-analysis-sample-size.svg' | relative_url }})
+![Required sample size by desired power]({{ '/content/statistics/power_analysis/img/power-analysis-sample-size.svg' | relative_url }})
 
 ## Conclusion {#conclusion}
 

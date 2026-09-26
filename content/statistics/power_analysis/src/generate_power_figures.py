@@ -8,7 +8,7 @@ from pathlib import Path
 from statistics import NormalDist
 
 NORMAL = NormalDist()
-OUT = Path(__file__).parents[1] / "assets" / "images"
+OUT = Path(__file__).parents[1] / "img"
 OUT.mkdir(parents=True, exist_ok=True)
 
 INK = "#24282b"
