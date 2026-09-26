@@ -23,6 +23,15 @@ Quantities derived from data (totals, shares, rates, differences) are always com
 
 Charts, plots and PNGs go through the `make-figure` skill, not an improvised plot script.
 
+## Keeping the docs current
+
+The docs in `docs/` are the record of how the repo works. A change to code, config, layout or a convention isn't finished until the doc that covers it says so.
+
+- Find the doc and section that own the topic (the table in `docs/repo_structure.md` maps them), and fold the change in there instead of appending a note elsewhere.
+- Replace what the change made obsolete; don't leave the old and new rule side by side.
+- If no doc covers it, ask the human where it belongs.
+- Mention the doc edit when reporting the change.
+
 ## Tools
 
 Prefer whichever tool gets there with the least overhead.

@@ -21,7 +21,7 @@ The root holds only what's listed above. Everything else goes one level down: th
 
 | Doc | Covers |
 |---|---|
-| [agent_guidelines.md](agent_guidelines.md) | how agents work here: role, context documents, numbers, figures, tools, git |
+| [agent_guidelines.md](agent_guidelines.md) | how agents work here: role, context documents, numbers, figures, keeping docs current, tools, git |
 | [content_curation.md](content_curation.md) | `content/`: idea directories, notes → outline → post, naming, what isn't tracked |
 | [publishing_with_jekyll.md](publishing_with_jekyll.md) | `jekyll/` and `_config.yml`: GitHub Pages, local preview, post front matter, design |
 | [writing_style.md](writing_style.md) | how to write notes, outlines, posts, docs, and chat replies |

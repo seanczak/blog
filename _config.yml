@@ -8,6 +8,7 @@ timezone: America/Los_Angeles
 
 # Serving machinery lives in jekyll/; posts live in content/<area>/<idea>/_posts/.
 layouts_dir: jekyll/_layouts
+data_dir: jekyll/_data
 
 exclude:
   - notshared

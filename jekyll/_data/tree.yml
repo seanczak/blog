@@ -1,0 +1,34 @@
+# Landing-page topic tree. Order here is display order.
+# section -> groups -> posts. A post is referenced by its file name minus the
+# date (post.slug), e.g. 2026-09-26-pricing-model-test.md -> pricing-model-test.
+# Each post's blurb is its front-matter `description` unless `blurb` is set here.
+# A post left out of this file still appears on /archive/.
+# Sections get a blurb only when they have no groups; otherwise blurbs go on groups.
+# Wrap a value in double quotes if it contains ": " or starts with a quote or #.
+
+- title: AI workflow
+  groups:
+    - title: Exploratory work with AI
+      blurb: "Posts on building an investigation jetpack: an exploration environment that humans can read and agents can navigate, with an eye on token efficiency and idea organization."
+      posts:
+        - slug: pricing-model-test
+          blurb: How prompt caching shapes the cost of a long agent session.
+    - title: Coding with AI
+      blurb: Posts on maximizing velocity with coding agents while keeping cost, quality and maintainability in check.
+
+- title: Statistics
+  groups:
+    - title: Experimentation
+      posts:
+        - slug: power-analysis
+    - title: Causal inference
+      blurb: Estimating effects when randomization isn't available.
+
+- title: Personal finance
+  groups:
+    - title: Retirement
+    - title: Budgeting
+
+- title: About this blog
+  groups:
+    - title: How it's built

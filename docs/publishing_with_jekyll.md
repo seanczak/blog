@@ -20,7 +20,7 @@ How the blog is built, rendered and published, and why it's set up this way. For
 | Path | Role | Why it's there |
 |---|---|---|
 | `_config.yml` | Site config | Pages only reads it from the repo root. |
-| `jekyll/` | Everything that serves the site: `_layouts/`, `assets/` (CSS, portrait), `index.md` (homepage), `about.md`, plus the local tooling (`Gemfile`, `Gemfile.lock`, `serve.sh`) | Keeps serving machinery out of the way of the writing. `_config.yml` sets `layouts_dir: jekyll/_layouts`. `index.md` and `about.md` set their own `permalink`, so they're served at `/` and `/about/`, not under `/jekyll/`. |
+| `jekyll/` | Everything that serves the site: `_layouts/`, `_data/tree.yml` (landing-page topic tree), `assets/` (CSS, portrait), `index.md` (landing page), `archive.md`, `about.md`, plus the local tooling (`Gemfile`, `Gemfile.lock`, `serve.sh`) | Keeps serving machinery out of the way of the writing. `_config.yml` sets `layouts_dir: jekyll/_layouts` and `data_dir: jekyll/_data`. `index.md`, `archive.md` and `about.md` set their own `permalink`, so they're served at `/`, `/archive/` and `/about/`, not under `/jekyll/`. |
 | `content/<area>/<idea>/_posts/` | Published posts | Jekyll picks up `_posts/` folders at any depth, so each post stays next to its notes. The folder must be named exactly `_posts`. |
 | `docs/` | Repo conventions | Excluded from the built site. |
 
@@ -49,7 +49,8 @@ tags: [one-category, another-category]
 
 - **Categories go in `tags`, not `categories`.** Jekyll adds every folder above a nested `_posts/` (for example `content`, `statistics`, `power_analysis`) to a post's `categories` and merges them with the front matter, so the real ones can't be picked out. `tags` is never derived from folders. The site still labels them "Categories".
 - Use one to three tags. Agents ask the human for them and don't invent new ones.
-- `description` and `tags` drive the homepage archive and filter. Posts sort newest first by `date`.
+- `description` and `tags` drive the archive and its filter. `description` is also the post's default blurb on the landing page.
+- A post appears on the landing page only once it's listed in `jekyll/_data/tree.yml` (see below). Posts sort newest first by `date`.
 - `published: false` keeps a post in the repo but off the site. Remove the flag to publish.
 
 ### Headings and the table of contents
@@ -69,7 +70,8 @@ Every generated figure or asset needs a checked-in reproducible script; see [con
 ## Design and rendering
 
 - Quiet editorial style: grey base, turquoise (`#087f86`) for content links and interaction, opaque gold (`#c6a34b`) for 2px structural dividers and the portrait trim.
-- Header: portrait, name, then Posts / About / LinkedIn. Header links are charcoal, and turquoise only on hover.
-- Homepage: chronological post list with a sticky right-hand Categories filter. No hero, no "Writing" heading, no card-heavy design.
+- Header: portrait, name, then Topics / Archive / About / LinkedIn. Header links are charcoal, and turquoise only on hover.
+- Landing page (`/`): a topic tree of sections, groups and posts, with a sticky right-hand list of sections and their groups. Groups are native `<details>` elements, collapsed by default, and a group with no posts shows "Posts to come."; clicking a group title, or its link in the right-hand list, expands it. Structure, order and blurbs come from `jekyll/_data/tree.yml`, not from folders. Posts are referenced by `slug` (file name minus date); a `blurb` there overrides the post's `description`. A slug that matches no post is skipped and leaves an HTML comment in the page.
+- Archive (`/archive/`): chronological post list with a sticky right-hand Categories filter. No hero, no "Writing" heading, no card-heavy design.
 - Articles: categories appear beneath the title. The table of contents hides below a `56rem` viewport width.
 - Implement dynamic state programmatically and deterministically. Don't use DOM-position selectors (for example `:first-child`) for filtered or sorted state. Derive it from visible data and apply explicit classes.

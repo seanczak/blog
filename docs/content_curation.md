@@ -23,7 +23,7 @@ Precedence follows refinement: post over outline, outline over notes. Notes are 
 
 ```text
 content/
-├── <area>/                    # broad grouping, e.g. infra, ai_workflow
+├── <area>/                    # broad grouping, e.g. ai, statistics
 │   ├── <idea>/                # one directory per idea, e.g. file_structure
 │   │   ├── notes.md           # exploration log
 │   │   ├── outline.md         # skeleton of the eventual post
@@ -43,6 +43,7 @@ content/
 ### Naming
 
 - **Area and idea directories:** brief `snake_case` names describing the subject, so the contents are guessable from the name. No date in the name; the post's filename holds the date.
+- **Ordered ideas:** when the ideas in a directory are meant to be read in sequence, prefix each idea directory with a two-digit index (`00_production_code_for_ds`, `01_dry`) so the file tree lists them in order. Display order on the site still comes from `jekyll/_data/tree.yml`.
 - **Post files:** `YYYY-MM-DD-short-title.md`. Front matter is described in [publishing_with_jekyll.md](publishing_with_jekyll.md#writing-a-post).
 
 ### Inside an idea directory

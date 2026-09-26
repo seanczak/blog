@@ -8,4 +8,4 @@ tags: [ai-workflows]
 
 ## Test {#test}
 
-If you can read this on GitHub Pages, idea directories under `content/ai_workflow/` are picked up too.
+If you can read this on GitHub Pages, idea directories under `content/ai/ai_explore_workflow/` are picked up too.

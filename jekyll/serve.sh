@@ -12,4 +12,4 @@ if [ ! -d vendor/bundle ]; then
   bundle install
 fi
 
-exec bundle exec jekyll serve --safe --source .. --destination ../_site --host 127.0.0.1 --port 4001 "$@"
+exec ruby -e 'load Gem.bin_path("bundler", "bundle")' -- exec jekyll serve --safe --source .. --destination ../_site --host 127.0.0.1 --port 4001 "$@"
