@@ -12,10 +12,11 @@ Token counts were measured 2026-09-26 (Claude Code 2.1.283) as the extra startup
 - @docs/site/publishing.md (2.3K tokens): post front matter, publishing, `_config.yml` and `jekyll/`, local preview.
 - @docs/site/design.md (0.7K tokens): style, header, landing-page tree, archive and article pages.
 
-## Skills
+## Skills and subagents
 
-Skills live in `.claude/skills/<name>/SKILL.md`. Claude Code discovers them automatically; other agents should open the matching `SKILL.md` when a request fits. There is one so far:
+Skills live in `.claude/skills/<name>/SKILL.md` and subagents in `.claude/agents/<name>.md`. Claude Code discovers both automatically; other agents should open the matching file when a request fits and follow its steps themselves.
 
-| Skill | Use when |
+| Skill or subagent | Use when |
 |---|---|
-| `make-figure` | any image goes into an idea's `img/`: a chart from a data file (it also saves a rerunnable plot script in `src/`), or a photo, diagram or imported figure. Every image is compressed with its helper |
+| `make-figure` (skill) | any image goes into an idea's `img/`: a chart from a data file (it also saves a rerunnable plot script in `src/`), or a photo, diagram or imported figure. Every image is compressed with its helper |
+| `pages-build-check` (subagent) | after a push to `main` that changes the built site (see `docs/site/publishing.md`), in the background, with the pushed SHA. Reports the Pages build outcome and the hard-refresh reminder |

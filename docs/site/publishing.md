@@ -13,7 +13,7 @@ How the blog is built and published, and why it's set up this way. For where ide
 
 - Local preview: `jekyll/serve.sh`, then open `http://127.0.0.1:4001/blog/`. The first run installs the pinned gems into `jekyll/vendor/bundle` (gitignored). Build output goes to `_site/` and `.jekyll-cache/`, also gitignored.
 - The `github-pages` plugins render any Markdown file at the repo root as a page, so `README.md`, `AGENTS.md` and `CLAUDE.md` are listed in `exclude`.
-- GitHub CLI: `/home/sfronczak/.local/bin/gh`. After a push, check the Pages build with `gh api repos/seanczak/blog/pages/builds/latest --jq '.status+" "+.commit'` and wait for `built` on the pushed commit.
+- GitHub CLI: `/home/sfronczak/.local/bin/gh`. After a push that changes the built site (any file Jekyll renders or copies: not under `exclude` in `_config.yml`, not a dotfile or dot-directory such as `.claude/`), start the `pages-build-check` subagent (`.claude/agents/pages-build-check.md`) in the background with the pushed SHA. It polls `gh api repos/seanczak/blog/pages/builds/latest` until that commit is `built` or `errored`. Relay its report to the human, including the hard-refresh reminder (Ctrl+Shift+R): without it the browser may serve the cached page.
 
 ## Repo layout decisions
 
