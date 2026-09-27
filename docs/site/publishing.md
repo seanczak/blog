@@ -31,7 +31,7 @@ There's no top-level `_posts/`.
 - `baseurl: "/blog"`: the site lives under `/blog`. Every internal link and asset must go through `relative_url` (see below) or it breaks.
 - `permalink: /:year/:month/:day/:title/`: post URLs. Changing this breaks existing links.
 - `timezone: America/Los_Angeles`: dates are read in Pacific time. A post dated later today than the moment of the build counts as a future post and is skipped. Date same-day posts `00:00:00`.
-- `exclude`: keeps `notshared/`, `docs/`, root Markdown files, the local Jekyll tooling, and each idea's `notes.md`, `outline.md`, `src/` and `notshared/` out of the built site.
+- `exclude`: keeps `notshared/`, `docs/`, root Markdown files, the local Jekyll tooling, and each idea's `notes.md`, `outline.md`, `src/`, `original_work/` and `notshared/` out of the built site.
 
 ## Writing a post
 

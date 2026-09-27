@@ -31,6 +31,7 @@ content/
 │   │   │   └── YYYY-MM-DD-slug.md
 │   │   ├── src/               # scripts behind the figures and numbers in the markdown
 │   │   ├── img/               # figures written by src/ and embedded in the post
+│   │   ├── original_work/     # the original analysis behind an imported post, kept as-is
 │   │   └── notshared/         # gitignored; data and private drafts
 │   └── <idea>/
 │       └── ...                # most ideas only have some of these
@@ -59,6 +60,7 @@ Most ideas begin as a single `notes.md`; other files appear as they're needed, n
 - **Other markdown**: add it when it helps (a comparison table, a reading list), and link it from the outline.
 - **`src/`**: the code that really produced each figure or quoted number. A clean checkout must be able to rerun it, and every generated figure has its script committed.
 - **`img/`**: what `src/` writes, embedded in the post and other markdown.
+- **`original_work/`**: for a post imported from elsewhere, the notebook or code that originally produced it, copied unchanged. Its input data goes in `original_work/notshared/`, never committed. A `README.md` links the source and lists the files, the uncommitted inputs included. It's a historical record, so the coding style guide doesn't apply and it isn't expected to rerun; new analysis goes in `src/`.
 
 Together, the markdown, `src/` and `img/` do the job a notebook would. They produce readable git diffs, and an agent moves through plain files more easily than through notebook JSON.
 
