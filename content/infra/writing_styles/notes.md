@@ -10,8 +10,8 @@ All six posts were read in full while they were imported or edited (Medium origi
 |---|---|---|
 | 2020-11-06 | [What in the World Happened in Virginia Tuesday Night?!](../../statistics/2020_election_series/01_virginia/_posts/2020-11-06-what-in-the-world-happened-in-virginia-tuesday-night.md) | older |
 | 2020-11-09 | [Calling Elections Early: Fake News or Statistics?](../../statistics/2020_election_series/00_calling_elections_early/_posts/2020-11-09-calling-elections-early-fake-news-or-statistics.md) | older |
-| 2020-11-09 | [How Swing-able is Texas Anyways?](../../statistics/2020_election_series/02_texas/_posts/2020-11-09-how-swing-able-is-texas-anyways.md) | older |
-| 2020-11-09 | [What Took So Long in the Swing States?](../../statistics/2020_election_series/03_swing_states/_posts/2020-11-09-what-took-so-long-in-the-swing-states.md) | older |
+| 2020-11-09 | [How Swing-able is Texas Anyways?](../../statistics/2020_election_series/03_texas/_posts/2020-11-09-how-swing-able-is-texas-anyways.md) | older |
+| 2020-11-09 | [What Took So Long in the Swing States?](../../statistics/2020_election_series/02_swing_states/_posts/2020-11-09-what-took-so-long-in-the-swing-states.md) | older |
 | 2021-01-01 | [An Approximation for Financial Independence](../../personal_finance/00_base_model/_posts/2021-01-01-an-approximation-for-financial-independence.md) | older |
 | 2026-09-19 | [Agentic Coding for ML Model Pipelines - Part 1](../../ai/ai_code_workflow/00_production_code_for_ds/_posts/2026-09-19-agentic-coding-for-ml-pipelines-part-1.md) | current voice |
 

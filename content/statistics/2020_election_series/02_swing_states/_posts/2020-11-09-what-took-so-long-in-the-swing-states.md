@@ -6,7 +6,7 @@ description: "Be nice to statisticians, they’re doing their best"
 tags: [statistics]
 ---
 
-![A small child pressing their hands to a window, reflected in the glass]({{ '/content/statistics/2020_election_series/03_swing_states/img/child-at-window.jpg' | relative_url }})
+![A small child pressing their hands to a window, reflected in the glass]({{ '/content/statistics/2020_election_series/02_swing_states/img/child-at-window.jpg' | relative_url }})
 *Image Credit: [Johnny Cohen](https://unsplash.com/photos/sxzuj6npVGU)*
 
 You might’ve noticed a peculiar trend last week as the election results came in. In fact, if you were like me, you not only noticed it… you were obsessively hitting refresh on your browser and not trusting the “Updated at {time}” message above the results page.
@@ -45,7 +45,7 @@ Instead, it means that there is a team of people who try to figure out what impo
 
 For example, one exhaustive way to account for confounding variables is to go back to the bags within bags approach we used for the counties. Think about it like a set of Russian dolls. Within a state, you choose to separate counties because you imagine people vote differently based on where they live. Then, within the counties you assume that the way someone votes makes a difference in who they vote for. And then you can keep going with ethnicities within each of those sub-groups and on and on. Once you have a sense for how each of these tinier subgroups react, you can then make a prediction on the whole state’s final tally.
 
-![Nested bags of red and blue votes: a Virginia bag split into county bags, one county split into early, mail-in and day-of voting bags, and one of those split into bags by ethnicity. Caption: think Russian dolls; split the state into counties, each county into bags by voting method, then by ethnicity if that matters, and on and on]({{ '/content/statistics/2020_election_series/03_swing_states/img/nested-bags.png' | relative_url }})
+![Nested bags of red and blue votes: a Virginia bag split into county bags, one county split into early, mail-in and day-of voting bags, and one of those split into bags by ethnicity. Caption: think Russian dolls; split the state into counties, each county into bags by voting method, then by ethnicity if that matters, and on and on]({{ '/content/statistics/2020_election_series/02_swing_states/img/nested-bags.png' | relative_url }})
 *Image by Author*
 
 ## All models are wrong, some are useful
@@ -82,10 +82,10 @@ What it really comes down to is risk tolerance for uncertainty with the models I
 
 Compound that with the external pressure to make the “right call” (as exemplified by the inquisition put to this [Fox News analyst](https://www.youtube.com/watch?v=OJDKS3d2RHk)) and you get the situation that we experienced last week.
 
-To me, this is enough to convince me that each vote truly does count, but I imagine there may still be some doubts especially in the light of seeing how quickly a state can be called. It’s outside the scope of this article but I argue that [statistically speaking, your vote definitely counted]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/02_texas/2020-11-09-how-swing-able-is-texas-anyways %}).
+To me, this is enough to convince me that each vote truly does count, but I imagine there may still be some doubts especially in the light of seeing how quickly a state can be called. It’s outside the scope of this article but I argue that [statistically speaking, your vote definitely counted]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/03_texas/2020-11-09-how-swing-able-is-texas-anyways %}).
 
 Check out my other case studies on the election:
 
 - [Illinois]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/00_calling_elections_early/2020-11-09-calling-elections-early-fake-news-or-statistics %}) (how many votes needed to call an election)
 - [Virginia]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/01_virginia/2020-11-06-what-in-the-world-happened-in-virginia-tuesday-night %}) (how did statisticians know Biden wins even while he was losing by 20%)
-- [Texas]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/02_texas/2020-11-09-how-swing-able-is-texas-anyways %}) (how swing-able is it really?)
+- [Texas]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/03_texas/2020-11-09-how-swing-able-is-texas-anyways %}) (how swing-able is it really?)

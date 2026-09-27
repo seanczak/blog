@@ -61,13 +61,13 @@ Ok, for those of you who followed all the way up until now you might still be as
 
 Of course, votes aren’t actually counted at the same speed and my little model I presented here isn’t actually the numbers from Tuesday night (8:30pm). But… it shows that while the public is being fed one story about Trump leading by 20%, the statisticians have already realized he doesn’t have a prayer of winning Virginia.
 
-Well, this is all very interesting, but [what about swing states]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/03_swing_states/2020-11-09-what-took-so-long-in-the-swing-states %})? And, this is not doing a whole lot to convince me whether or not [my vote counts]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/02_texas/2020-11-09-how-swing-able-is-texas-anyways %}). I’d argue that it does but this post is getting a bit long. I try to answer those questions in greater detail in other posts.
+Well, this is all very interesting, but [what about swing states]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/02_swing_states/2020-11-09-what-took-so-long-in-the-swing-states %})? And, this is not doing a whole lot to convince me whether or not [my vote counts]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/03_texas/2020-11-09-how-swing-able-is-texas-anyways %}). I’d argue that it does but this post is getting a bit long. I try to answer those questions in greater detail in other posts.
 
 Check out my other case studies on the election:
 
 - [Illinois]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/00_calling_elections_early/2020-11-09-calling-elections-early-fake-news-or-statistics %}) (how many votes needed to call an election)
-- [Pennsylvania]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/03_swing_states/2020-11-09-what-took-so-long-in-the-swing-states %}) (swing state drama statistical interpretation)
-- [Texas]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/02_texas/2020-11-09-how-swing-able-is-texas-anyways %}) (how swing-able is it really?)
+- [Pennsylvania]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/02_swing_states/2020-11-09-what-took-so-long-in-the-swing-states %}) (swing state drama statistical interpretation)
+- [Texas]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/03_texas/2020-11-09-how-swing-able-is-texas-anyways %}) (how swing-able is it really?)
 
 Images:
 

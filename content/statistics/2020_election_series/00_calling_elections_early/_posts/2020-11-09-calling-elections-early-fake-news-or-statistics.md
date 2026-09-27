@@ -110,5 +110,5 @@ But the main takeaway remains: in the case of a well mixed bag of marbles, you d
 If this leaves you feeling disappointed in how long it takes swing states to be called or whether or not your vote matters… I wrote a few more articles using the following states as case studies:
 
 - [Virginia]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/01_virginia/2020-11-06-what-in-the-world-happened-in-virginia-tuesday-night %}) being called for Biden even though he was losing
-- Could [Texas]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/02_texas/2020-11-09-how-swing-able-is-texas-anyways %}) really swing?
-- [Pennsylvania]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/03_swing_states/2020-11-09-what-took-so-long-in-the-swing-states %}) mail-in ballots
+- Could [Texas]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/03_texas/2020-11-09-how-swing-able-is-texas-anyways %}) really swing?
+- [Pennsylvania]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/02_swing_states/2020-11-09-what-took-so-long-in-the-swing-states %}) mail-in ballots

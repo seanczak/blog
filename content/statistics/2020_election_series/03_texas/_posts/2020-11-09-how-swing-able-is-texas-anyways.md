@@ -8,7 +8,7 @@ tags: [statistics]
 
 After much [statistical reflection]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/01_virginia/2020-11-06-what-in-the-world-happened-in-virginia-tuesday-night %}) of this past election, I’ve grappled with the concept of “does my vote actually matter” and I imagine I’m not alone.
 
-![A weathered Texas flag flying from a pole against a blue sky]({{ '/content/statistics/2020_election_series/02_texas/img/texas-flag.jpg' | relative_url }})
+![A weathered Texas flag flying from a pole against a blue sky]({{ '/content/statistics/2020_election_series/03_texas/img/texas-flag.jpg' | relative_url }})
 *Image Credit: Adam Thomas [1]*
 
 I know I’m not the only one who was surprised to see Texas included as a “swing state” in Google’s macro. How could that be? Some sort of mistake? I went to school in Texas and let me tell you, that place is a red state. It at least felt red…
@@ -19,7 +19,7 @@ Let’s take Texas for example and I hope to demonstrate why, in fact, your vote
 
 ## What is an Election Anyways?
 
-When I wrote about [Virginia]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/01_virginia/2020-11-06-what-in-the-world-happened-in-virginia-tuesday-night %}) and [Pennsylvania]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/03_swing_states/2020-11-09-what-took-so-long-in-the-swing-states %}), I made the point that the reports from the news were resulting from biased samples. Now, when I say “biased,” I don’t mean they were wrong or intentionally misleading. I mean that because of the manner that the results were collected (e.g. “in person” ballots were naturally counted faster), it gave an incomplete picture of the story that the underlying population (all the ballots combined) was telling.
+When I wrote about [Virginia]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/01_virginia/2020-11-06-what-in-the-world-happened-in-virginia-tuesday-night %}) and [Pennsylvania]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/02_swing_states/2020-11-09-what-took-so-long-in-the-swing-states %}), I made the point that the reports from the news were resulting from biased samples. Now, when I say “biased,” I don’t mean they were wrong or intentionally misleading. I mean that because of the manner that the results were collected (e.g. “in person” ballots were naturally counted faster), it gave an incomplete picture of the story that the underlying population (all the ballots combined) was telling.
 
 Furthermore, since I started writing this little mini-series, I’ve been thinking of the [votes cast in each state]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/00_calling_elections_early/2020-11-09-calling-elections-early-fake-news-or-statistics %}) as the “target” of my statistical analysis. Statistically speaking, I was treating “all the ballots” as “the population” which we could “sample” from to make inferences about the final results.
 
@@ -43,7 +43,7 @@ During the writing of this article, Texas had counted 98% of its votes and Donal
 
 Let’s do a similar analysis we did with [Virginia]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/01_virginia/2020-11-06-what-in-the-world-happened-in-virginia-tuesday-night %}) where we split the state by county to get a sense of how Texas is spatially distributed (i.e. [how did each county vote?](https://www.politico.com/2020-election/results/texas/)). First off, we see that, again, about 50% of the votes come from the largest 5 counties.
 
-![Bar chart of votes (y axis, 0 to about 900,000) for Biden and Trump in Texas's 30 largest counties; Harris County leads with about 910,000 for Biden to 700,000 for Trump, followed by Dallas, Tarrant, Bexar and Travis]({{ '/content/statistics/2020_election_series/02_texas/img/county-votes.png' | relative_url }})
+![Bar chart of votes (y axis, 0 to about 900,000) for Biden and Trump in Texas's 30 largest counties; Harris County leads with about 910,000 for Biden to 700,000 for Trump, followed by Dallas, Tarrant, Bexar and Travis]({{ '/content/statistics/2020_election_series/03_texas/img/county-votes.png' | relative_url }})
 *Image by Author*
 
 In Virginia’s case, this type of distribution ensured Biden’s victory (even though he was behind by 20% at one point). However, we can see that the largest county, Harris, is not nearly as imbalanced (in favor of Biden) as Fairfax County was for Virginia. I wonder…
@@ -74,7 +74,7 @@ Ok back to Texas… We already pseudo-established (I realize we’re doing a lot
 
 We recall that the deficit that the blues needed to make up was 600,000. What percentage of the Texas population would that be? Turns out only about 3%.
 
-Ok, but we already established that most Texans are Republican. So what percentage MORE of the Democrats would have to show up. Well, from the numbers from the toy model above, if 6.3% more democrats showed up to vote this year, Texas would’ve swung blue. It would’ve meant that 57% of Texas Democrats could have surprised the 52% of Texas Republicans (assuming their number doesn’t change) at the polls and Texas would have artificially given all 38 of its electoral college votes to Biden. We wouldn’t even be talking about [Pennsylvania]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/03_swing_states/2020-11-09-what-took-so-long-in-the-swing-states %}) right now…
+Ok, but we already established that most Texans are Republican. So what percentage MORE of the Democrats would have to show up. Well, from the numbers from the toy model above, if 6.3% more democrats showed up to vote this year, Texas would’ve swung blue. It would’ve meant that 57% turnout among Texas Democrats could have surprised the 53% turnout among Texas Republicans (assuming their turnout doesn’t change) at the polls and Texas would have artificially given all 38 of its electoral college votes to Biden. We wouldn’t even be talking about [Pennsylvania]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/02_swing_states/2020-11-09-what-took-so-long-in-the-swing-states %}) right now…
 
 ## Your Vote Matters
 
@@ -92,7 +92,7 @@ Check out my other case studies on the election:
 
 - [Illinois]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/00_calling_elections_early/2020-11-09-calling-elections-early-fake-news-or-statistics %}) (how many votes needed to call an election)
 - [Virginia]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/01_virginia/2020-11-06-what-in-the-world-happened-in-virginia-tuesday-night %}) (how did statisticians know Biden wins even while he was losing by 20%)
-- [Pennsylvania]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/03_swing_states/2020-11-09-what-took-so-long-in-the-swing-states %}) (swing state drama statistical interpretation)
+- [Pennsylvania]({{ site.baseurl }}{% post_url content/statistics/2020_election_series/02_swing_states/2020-11-09-what-took-so-long-in-the-swing-states %}) (swing state drama statistical interpretation)
 
 Images
 
