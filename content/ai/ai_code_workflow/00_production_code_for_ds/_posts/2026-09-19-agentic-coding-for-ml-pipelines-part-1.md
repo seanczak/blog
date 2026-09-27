@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Agentic Coding for ML Model Pipelines - Part 1: The Principles"
+title: "Agentic Coding - Part 1: The Principles"
 date: 2026-09-19 00:00:00 -0700
 description: "Software engineering principles still set development velocity even in an agentic world."
 tags: [ai-workflows]

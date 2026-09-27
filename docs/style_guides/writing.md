@@ -4,7 +4,7 @@ These rules cover every piece of text produced here: notes, outlines, posts, the
 
 ## blog document specific styles
 
-[Agentic Coding for ML Model Pipelines - Part 1](../../content/ai/ai_code_workflow/00_production_code_for_ds/_posts/2026-09-19-agentic-coding-for-ml-pipelines-part-1.md) is an example of how a post should look. It's the reference for the author's current voice; the posts imported from Medium (2020–2021) are older and aren't a model for new writing.
+[Agentic Coding - Part 1](../../content/ai/ai_code_workflow/00_production_code_for_ds/_posts/2026-09-19-agentic-coding-for-ml-pipelines-part-1.md) is an example of how a post should look. It's the reference for the author's current voice; the posts imported from Medium (2020–2021) are older and aren't a model for new writing.
 
 *Note for Sean:* observations on the blog voice, drawn from all the posts so far, are saved in `content/infra/writing_styles/notes.md`. We can revisit them if and when we decide to expand the agent's default blog voice in this section. Agents: don't apply them until then.
 
