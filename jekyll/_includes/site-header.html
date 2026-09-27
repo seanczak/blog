@@ -3,11 +3,10 @@
     <a class="header-profile-link" href="{{ '/' | relative_url }}"><img class="header-profile" src="{{ '/jekyll/assets/images/sean-fronczak.png' | relative_url }}" alt="{{ site.title }}, home"></a>
     <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     {% for item in site.data.navigation %}
-      {% if item.external %}
-        <a href="{{ item.url }}" rel="noopener noreferrer" target="_blank">{{ item.title }}</a>
-      {% else %}
-        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-      {% endif %}
+      {% if item.external %}{% assign href = item.url %}{% else %}{% assign href = item.url | relative_url %}{% endif %}
+      <a href="{{ href }}"{% if item.external %} rel="noopener noreferrer" target="_blank"{% endif %}{% if item.icon %} class="nav-icon-link" aria-label="{{ item.title }}" title="{{ item.title }}"{% endif %}>
+        {%- if item.icon %}{% include icons/{{ item.icon }}.svg %}{% else %}{{ item.title }}{% endif -%}
+      </a>
     {% endfor %}
   </nav>
 </header>

@@ -1,5 +1,6 @@
 # Header links, in display order. `url` is site-relative (run through relative_url);
-# `external: true` opens in a new tab and is used as-is.
+# `external: true` opens in a new tab and is used as-is. `icon: <name>` shows
+# jekyll/_includes/icons/<name>.svg in place of the title, which stays as the label.
 - title: Topics
   url: /
 - title: Archive
@@ -8,4 +9,5 @@
   url: /about/
 - title: LinkedIn
   url: https://www.linkedin.com/in/sean-fronczak/
+  icon: linkedin
   external: true

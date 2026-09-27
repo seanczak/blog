@@ -24,7 +24,7 @@ How the blog is built and published, and why it's set up this way. For where ide
 | `content/<area>/<idea>/_posts/` | Published posts | Jekyll picks up `_posts/` folders at any depth, so each post stays next to its notes. The folder must be named exactly `_posts`. |
 | `docs/` | Repo conventions | Excluded from the built site. |
 
-There's no top-level `_posts/`. The original placeholder posts were deleted, and the power-analysis post moved to `content/statistics/power_analysis/`.
+There's no top-level `_posts/`.
 
 ### `_config.yml`
 
@@ -47,7 +47,7 @@ tags: [one-category, another-category]
 ---
 ```
 
-- **Categories go in `tags`, not `categories`.** Jekyll adds every folder above a nested `_posts/` (for example `content`, `statistics`, `power_analysis`) to a post's `categories` and merges them with the front matter, so the real ones can't be picked out. `tags` is never derived from folders. The site still labels them "Categories".
+- **Categories go in `tags`, not `categories`.** Jekyll adds every folder above a nested `_posts/` (for example `content`, `statistics`, `2020_election_series`, `01_virginia`) to a post's `categories` and merges them with the front matter, so the real ones can't be picked out. `tags` is never derived from folders. The site still labels them "Categories".
 - Use one to three tags. Agents ask the human for them and don't invent new ones.
 - `description` and `tags` drive the archive and its filter. `description` is also the post's default blurb on the landing page.
 - A post appears on the landing page only once it's listed in `jekyll/_data/tree.yml` (see [design.md](design.md)). Posts sort newest first by `date`.
@@ -62,7 +62,7 @@ The right-hand "On this page" table of contents is generated from `##` through `
 Internal links and assets must go through `relative_url` so they get the `/blog` prefix:
 
 ```md
-![Power curves]({{ '/content/statistics/power_analysis/img/power-curves.svg' | relative_url }})
+![Statewide totals]({{ '/content/statistics/2020_election_series/01_virginia/img/statewide-totals.png' | relative_url }})
 ```
 
 #### Renaming breaks links

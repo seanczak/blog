@@ -29,8 +29,6 @@
   groups:
     - title: Experimentation
       id: experimentation
-      posts:
-        - slug: power-analysis
     - title: Causal inference
       id: causal-inference
       blurb: Estimating effects when randomization isn't available.

@@ -5,7 +5,7 @@ How the site looks and how its pages behave. How it's built and published, and w
 ## Style
 
 - Quiet editorial style: grey base, turquoise (`#087f86`) for content links and interaction, opaque gold (`#c6a34b`) for 2px structural dividers and the portrait trim.
-- Header: portrait, name, then Topics / Archive / About / LinkedIn. Header links are charcoal, and turquoise only on hover.
+- Header: portrait, name, then Topics / Archive / About and a LinkedIn icon. Header links, the icon included, are charcoal, and turquoise only on hover.
 
 ## Pages
 
@@ -19,5 +19,5 @@ How the site looks and how its pages behave. How it's built and published, and w
 - Colors come only from the tokens in `jekyll/_sass/_tokens.scss`. Dark mode redefines the tokens; component rules never repeat a color.
 - One Sass partial per component (header, sidebar, categories, archive, post, topic tree), each with its own responsive rules.
 - Page behavior lives in `jekyll/assets/js/<name>.js`, one file per interactive page. A page or layout opts in with `script: <name>` in its front matter; templates carry no inline scripts.
-- Header links are data (`jekyll/_data/navigation.yml`), not markup.
+- Header links are data (`jekyll/_data/navigation.yml`), not markup. A link with `icon: <name>` shows the inline SVG `jekyll/_includes/icons/<name>.svg` (filled with `currentColor`) and keeps its title as the `aria-label`.
 - Implement dynamic state programmatically and deterministically. Don't use DOM-position selectors (for example `:first-child`) for filtered or sorted state. Derive it from visible data and apply explicit classes.

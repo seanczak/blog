@@ -39,7 +39,7 @@ Most of the writing here comes out of work in progress: hypotheses being tested,
 
 ### Paths
 
-Paths are given from the repo root, beginning at the shortest prefix that identifies the file without ambiguity, e.g. `content/statistics/power_analysis/src/generate_power_figures.py`. Machine-specific prefixes such as a home directory never appear.
+Paths are given from the repo root, beginning at the shortest prefix that identifies the file without ambiguity, e.g. `content/statistics/2020_election_series/01_virginia/img/statewide-totals.png`. Machine-specific prefixes such as a home directory never appear.
 
 ### Currency
 
