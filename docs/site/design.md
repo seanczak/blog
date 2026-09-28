@@ -5,6 +5,7 @@ How the site looks and how its pages behave. How it's built and published, and w
 ## Style
 
 - Quiet editorial style: grey base, turquoise (`#087f86`) for content links and interaction, opaque gold (`#c6a34b`) for 2px structural dividers and the portrait trim.
+- Fonts: one font across the whole site (Georgia, falling back to a system serif), headings, titles, navigation and labels included.
 - Header: portrait, name, then Topics / Archive / About and a LinkedIn icon. Header links, the icon included, are charcoal, and turquoise only on hover.
 
 ## Pages
@@ -16,6 +17,7 @@ How the site looks and how its pages behave. How it's built and published, and w
 
 ## Implementation
 
+- The font is set once, as `$font` in `jekyll/_sass/_base.scss`, applied to `body` and inherited everywhere else (form controls are told to inherit it). Component rules never set `font-family`.
 - Colors come only from the tokens in `jekyll/_sass/_tokens.scss`. Dark mode redefines the tokens; component rules never repeat a color.
 - One Sass partial per component (header, sidebar, categories, archive, post, topic tree), each with its own responsive rules.
 - Page behavior lives in `jekyll/assets/js/<name>.js`, one file per interactive page. A page or layout opts in with `script: <name>` in its front matter; templates carry no inline scripts.

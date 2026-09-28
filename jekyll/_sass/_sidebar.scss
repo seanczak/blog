@@ -3,7 +3,7 @@
 .category-nav { align-self: start; border-left: 1px solid var(--rule); padding-left: 1.25rem; position: sticky; top: 1.5rem; }
 .category-nav h2 { margin-bottom: .8rem; }
 .category-links { display: grid; gap: .35rem; }
-.category-links button { background: none; border: 0; color: var(--muted); cursor: pointer; font-family: $sans; font-size: .85rem; padding: .15rem 0; text-align: left; }
+.category-links button { background: none; border: 0; color: var(--muted); cursor: pointer; font-size: .85rem; padding: .15rem 0; text-align: left; }
 .category-links button:hover, .category-links button.is-active { color: var(--accent); }
 .category-links button span { color: var(--count); float: right; }
 .category-links button.is-subtopic { font-size: .8rem; padding-left: .9rem; }
