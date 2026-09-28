@@ -12,3 +12,7 @@
   url: https://www.linkedin.com/in/sean-fronczak/
   icon: linkedin
   external: true
+- title: GitHub
+  url: https://github.com/seanczak/blog
+  icon: github
+  external: true
