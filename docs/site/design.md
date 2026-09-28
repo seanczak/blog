@@ -6,7 +6,7 @@ How the site looks and how its pages behave. How it's built and published, and w
 
 - Quiet editorial style: grey base, turquoise (`#087f86`) for content links and interaction, opaque gold (`#c6a34b`) for 2px structural dividers and the portrait trim.
 - Fonts: one font across the whole site (Georgia, falling back to a system serif), headings, titles, navigation and labels included.
-- Header: portrait, name, then Topics / Archive / About and a LinkedIn icon. Header links, the icon included, are charcoal, and turquoise only on hover.
+- Header: portrait, name, then Topics / Archive / About and a LinkedIn icon. On phone-width screens (below `$phone`) the text links fold into a three-line menu button beside the LinkedIn icon, a native `<details>` dropdown with no script. On phone-width screens (below `$phone`) Archive is dropped, via `hide_on_phone: true` in `jekyll/_data/navigation.yml`. Header links, the icon included, are charcoal, and turquoise only on hover.
 
 ## Pages
 

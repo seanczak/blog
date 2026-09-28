@@ -6,6 +6,11 @@
 .site-header nav a:not(.site-title):hover { color: var(--accent); text-decoration: underline; }
 .nav-icon-link { display: flex; }
 .nav-icon { height: 1.1em; width: 1.1em; }
+.nav-menu { display: none; position: relative; }
+.nav-menu summary { color: var(--muted); cursor: pointer; list-style: none; }
+.nav-menu summary::-webkit-details-marker { display: none; }
+.nav-menu summary:hover, .nav-menu[open] summary { color: var(--accent); }
+.nav-menu-links { background: var(--bg); border: 1px solid var(--rule); display: grid; gap: .35rem; min-width: 9rem; padding: .6rem .9rem; position: absolute; right: 0; top: calc(100% + .6rem); z-index: 10; }
 .site-title { color: inherit; font-size: clamp(1.35rem, 3vw, 1.7rem); font-weight: 750; letter-spacing: -.035em; line-height: 1; margin-right: auto; text-decoration: none; }
 .header-profile-link { display: flex; flex: 0 0 auto; }
 .header-profile { border: 1px solid var(--gold); border-radius: 50%; flex: 0 0 auto; height: 4.2rem; object-fit: cover; width: 4.2rem; }
@@ -14,4 +19,6 @@ footer { border-top: 2px solid var(--gold); color: var(--subtle); font-size: .78
 @media (max-width: $phone) {
   .site-header nav { gap: .7rem; }
   .header-profile { height: 3.5rem; width: 3.5rem; }
+  .nav-text-link { display: none; }
+  .nav-menu { display: block; }
 }

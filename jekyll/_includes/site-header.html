@@ -4,9 +4,18 @@
     <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     {% for item in site.data.navigation %}
       {% if item.external %}{% assign href = item.url %}{% else %}{% assign href = item.url | relative_url %}{% endif %}
-      <a href="{{ href }}"{% if item.external %} rel="noopener noreferrer" target="_blank"{% endif %}{% if item.icon %} class="nav-icon-link" aria-label="{{ item.title }}" title="{{ item.title }}"{% endif %}>
+      <a href="{{ href }}"{% if item.external %} rel="noopener noreferrer" target="_blank"{% endif %}{% if item.icon %} class="nav-icon-link" aria-label="{{ item.title }}" title="{{ item.title }}"{% else %} class="nav-text-link"{% endif %}>
         {%- if item.icon %}{% include icons/{{ item.icon }}.svg %}{% else %}{{ item.title }}{% endif -%}
       </a>
     {% endfor %}
+    {% comment %}Phone-width menu: the text links again, behind a native <details> toggle.{% endcomment %}
+    <details class="nav-menu">
+      <summary class="nav-icon-link" aria-label="Menu" title="Menu">{% include icons/menu.svg %}</summary>
+      <div class="nav-menu-links">
+        {% for item in site.data.navigation %}{% unless item.icon %}
+          <a href="{% if item.external %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"{% if item.external %} rel="noopener noreferrer" target="_blank"{% endif %}>{{ item.title }}</a>
+        {% endunless %}{% endfor %}
+      </div>
+    </details>
   </nav>
 </header>
