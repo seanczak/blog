@@ -76,9 +76,6 @@
 
 # blog itself
 
-- Intense election week not nerve-wracking
-- Exploratory blurb needs to mention sharing and build upon
-- All text fonts don't seem same for statistics subheaders
 - Nicks wow docs (from skill/sub agent, and mcp stuff)
 
 
