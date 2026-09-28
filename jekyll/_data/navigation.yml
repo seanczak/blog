@@ -1,7 +1,7 @@
 # Header links, in display order. `url` is site-relative (run through relative_url);
-# `external: true` opens in a new tab and is used as-is. `icon: <name>` shows
-# jekyll/_includes/icons/<name>.svg in place of the title, which stays as the label.
-# Below the $phone width, links without an icon move into the header's menu.
+# `external: true` opens in a new tab and is used as-is. A link with `icon: <name>`
+# shows jekyll/_includes/icons/<name>.svg in the header, with its title as the label;
+# links without an icon are listed in the header's menu.
 - title: Topics
   url: /
 - title: Archive
