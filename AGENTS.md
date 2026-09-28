@@ -19,4 +19,4 @@ Skills live in `.claude/skills/<name>/SKILL.md` and subagents in `.claude/agents
 | Skill or subagent | Use when |
 |---|---|
 | `make-figure` (skill) | any image goes into an idea's `img/`: a chart from a data file (it also saves a rerunnable plot script in `src/`), or a photo, diagram or imported figure. Every image is compressed with its helper |
-| `pages-build-check` (subagent) | after a push to `main` that changes the built site (see `docs/site/publishing.md`), in the background, with the pushed SHA. Reports the Pages build outcome and the hard-refresh reminder |
+| `pages-build-check` (subagent) | after a push to `main` that changes the built site (see `docs/site/publishing.md`), in the background, with the pushed SHA. Reports the Pages build outcome and the reload reminder |

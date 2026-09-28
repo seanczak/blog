@@ -21,7 +21,7 @@ Reports whether GitHub Pages built a commit just pushed to `seanczak/blog`. The 
 
    | Outcome | Report |
    |---|---|
-   | Built | `Pages built <sha>. Hard refresh (Ctrl+Shift+R; Cmd+Shift+R on macOS) to bypass the browser cache.` |
+   | Built | `Pages built <sha>. Reload the page (F5, or pull to refresh on a phone) if it still shows the old version.` |
    | Errored | `Pages build errored on <sha>:` followed by `error.message` from `gh api repos/seanczak/blog/pages/builds/latest`. |
    | Timed out | `Pages build for <sha> not finished after 5 min; last status: <status> <commit>.` |
 
