@@ -45,6 +45,7 @@ content/
 
 - **Area and idea directories:** brief `snake_case` names describing the subject, so the contents are guessable from the name. No date in the name; the post's filename holds the date.
 - **Ordered ideas:** when the ideas in a directory are meant to be read in sequence, prefix each idea directory with a two-digit index (`00_production_code_for_ds`, `01_dry`) so the file tree lists them in order. Display order on the site still comes from `jekyll/_data/tree.yml`.
+- **Unpublished files:** a file name containing `notes` (`notes.md`) or `.np.` ("not published", e.g. `ai_series.np.md`) keeps a file off the built site. Other Markdown under `content/` outside `_posts/` is published as a stray page, so name working documents accordingly.
 - **Post files:** `YYYY-MM-DD-short-title.md`. Front matter is described in [publishing.md](../site/publishing.md#writing-a-post).
 
 ### Inside an idea directory

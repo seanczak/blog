@@ -28,7 +28,8 @@ exclude:
   - jekyll/Gemfile.lock
   - jekyll/vendor
   - jekyll/serve.sh
-  - "content/**/notes.md"
+  - "content/**/*notes*"
+  - "content/**/*.np.*"
   - "content/**/outline.md"
   - "content/**/src"
   - "content/**/original_work"
