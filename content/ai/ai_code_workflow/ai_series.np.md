@@ -117,6 +117,15 @@
     - System - code that distills into a schema of outputs (and if those can keep being distilled, do it again), then have a layer of judgement that looks at outputs and make a decision or surface patterns (but it's a balance of is the scripting becoming too complex (eg with many if else conditions and unknown expansion in that dimension - maybe just let the LLM call) with scripts and being nondeterministic with LLM)
 - System - LLM is also good at connecting different pueces of the output - like if the etl is off in this way and the train eval is like this (look through supporting output when eval is off) - also knows code so it's like oh ok this is why
 
+- Matt on qc system
+    - Runs registry table, script that can diff two runs - things to highlight (for metrics), LLM knows what to do based on the different types of diff events - writes a report
+    - Diff-ing to model runs is primitive - if you run many models you can get a diff between each metric for each pair (df for each) - he has a skill that looks at that data and tries to find patterns
+    - Llm- script and automate as much as possible - the smallest element of judgement is run through the LLM
+    - Llm - Triage warnings and watch for them
+    - LLM - Results of the test go to the ticket
+
+
+
 # blog itself
 
 - Nicks wow docs (from skill/sub agent, and mcp stuff)
