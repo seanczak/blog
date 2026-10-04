@@ -26,21 +26,32 @@
 
 - Srp and generalization - what is principle make them as general and reusable as possible within reason (with inputs and output) - modular
 - Srp - maybe start with an example (it puts everything in one file - none of the components can be reused so they have to be coded again or oddly called in where not needed)
+- Soc - example is breaking up class that calls a loop on a bunch of instances of a subclass and that subclass simply holds all the logic that gets operated on a subclass. Whereas the governing one kind of operates on the like edge bucket defines how it's consumed and called and what it consumes and calls
+- Srp - pandas is the least readable language, but it's what we got, rapping chunks of four or five lines into English statements is very helpful for code
+- Soc - sql files go in their own files (schemas, sql to query might also be separated, feature store vs output as well - define the lines)
 
-## ygani + naming
+
+
+## yagni + naming
 
 
 - Yagni - don't add functionality you don't need AND delete
 - Maybe yagni and naming are in traversible and readable post? (“More on ….”) - answers how the code could STILL be unreadable (should read like a logical novel the whole way through )
+- for naming conventions too (kind of a system one) -- example of the dev tagging on the job naming in dbx which was different by env - actually a convention that it wasn't clear what it was serving us but it was definitely making matching behavior challenging to predict and design around -- like being told to hop on one foot while cooking (are my hands still fine yes but now I have to deal with - how not to slip, how to minimize my movements, when do I switch feet, how do I go about the process of switching feet to stay in compliance, etc)
 
 ## documentation as code artifacts
 - index
 - when you have your design components nicely set up and now you're ready to turn th agent loose on them - making sure that it follows the standards you just set up and took time to do as it assembles the pieces together
 
-## implementation stage
+## implementation stage (ai implement)
+- see system ai below
+
 - hand hold the components of the system design - THEN turn the agent loose
 - What can I trust the ai to do - small well defined pieces - even some high level planning
 - Hard to automate the whole thing because we are the ones that need to drive the intention (in ai research they're having this issue too, with defining appropriate objectives at each stage to push it to continue to do better and better, it's the same for our company and our code base and our conventions that we're setting, someone has to decide what goes into the Constitution or style guides or workflow organization, even if we aren't even the ones writing those documents) - 
+- Ai code implement - principles and process (thats why we just spent so much time on the rest of it)
+- Waterfall
+- Agentic coding - giving feedback loop so it can check its own work - its good at trying a million things but not good at predicting which will be best
 
 
 # exploration
@@ -69,10 +80,42 @@
 
 # system design
 
+- System intro - just inherited a project that I completely redesigned and had to defend a lot of those decisions - that is where most of these posts came from - human decisions leading into unchecked ai additions onto suboptimal foundation was what I was detangling
+- Versioning for ci/cd - keeps it from being a puzzle every ticket and big project design of how to integrate it (tied together our qc and everything)
+
+- see above for yagni
 - hand hold the components of the system design - THEN turn the agent loose
 - System design - using less dependencies (soemthing about going down to the core and building from there - thats why cc is winning the ai coding agent game - beastly at bash/git), code should already be written so it can port between design decisions easily (generalization flow, only last layer should get hit), something about gha, versioning data with code (not related to gh releases but can be)
+- System - refactor in stages (make the bare bones of the spine you're building on and then slowly start transitioning components to the new spine)
+
+## crt (choosing right tool - maybe analog to srp), 
+- Crt - if you don't know if you'll need the bells and whistles that come with a tool don't bend your service code to accommodate this over engineered solution - just choose the simplest tool for the job unless you know you'll need the rest
+- System - crt - level on abstraction stack is a decision at every stage (processing vs training on sagemaker - either write more code or deal with rigidly defined api – eg do we need more security or flexibility over our outputs or schemas?) - tradeoffs to choosing something off the shelf vs stepping down a level and building up a bit (which could actually end up being less code in some cases)
+    - System - obviously the other side of the argument is having to write your own code and test it and manage it has its own cost, so it's a balance
+- System case study - using lists of lists instead of pandas (even though an agent could work with both happily to conform) - pandas might be messy but it's a nice balance of component and abstraction (can do enough with it but it doesn't go so deep that it's painful) - probably why df manipulation is messy looking (at least it's not element level - c code level) - allows for us to build on top of it like scipy and SK learn 
+- System - using third party for their first class purposes (dbx, mlflow, Kafka as pubsub) - always a trade off between complexity (ie the drawback of using that thing) and the value it adds (mlflow for xgboost replaces an optuna/ for loop and jupyter notebooks for hosted complexity and rigid ui… feels like this only pays for itself with deep learning where managing all of it yourself becomes a big enough lift) - I’m probably a little farther on the “go to the root” end of the spectrum where I’d prefer the s3 type of solution that can be used easily, quickly spun up and hooked up to athena if I need over a delta table where I’m a little more limited
+- System - level of abstraction choice - surely there will be agentic plugins for mlflow and dbx soon that actually work but i still feel like it will be a decision to make - you can really get tied in a knot if you just use technology to use it an a lot of times these ones aren’t much better than just designing it yourself the way you and your group work best with whatever constraints you have (and code is super cheap now, organization is key and expensive)
+-System - level of abstraction choice - unless I know absolutely up on how I'm going to use the service and all of its primary features, it actually can be easier to just leave it out because sometimes something like ml flow is really easy to just add in later in the places that I need it
 
 
+## DC (designing components - analog to soc)
+- DC - components are how we learn. Generalizability as a species 2 through research
+- DC - edges also include like how it's consumed within another application. Say the governing one
+- DC - do one thing well - linux
+- System - designing components (edges) well and letting services use them as they will (Microsoft sucks at this Google is amazing - Google docs vs word)
+
+
+## define your edges / contracts
+
+- System - define your edges (standardized system if possible) - this also goes into crt if one service doesn't integrate well with another - boundaries should be well defined (think all sql servers use the same ish sql) - also example of why aws is slightly better than gcp (maybe that's changed but it simply integrates better with its components and that could be worth the cost) - linux defines the boundary really well (same with git) - the glue code is super important - look at Nvidia - think garden hose and nozzle and spigot 
+
+## agentic system design
+- probably the same as ai implement above in the code section
+
+- Nicks different models  - codex writes code, opus (to talk to writing the spec and the orchestrator), sonnet is the tester (reads pr and tests it)
+- System - script and automate as much as possible - the smallest element of judgement is run as ethrough the LLM 
+    - System - code that distills into a schema of outputs (and if those can keep being distilled, do it again), then have a layer of judgement that looks at outputs and make a decision or surface patterns (but it's a balance of is the scripting becoming too complex (eg with many if else conditions and unknown expansion in that dimension - maybe just let the LLM call) with scripts and being nondeterministic with LLM)
+- System - LLM is also good at connecting different pueces of the output - like if the etl is off in this way and the train eval is like this (look through supporting output when eval is off) - also knows code so it's like oh ok this is why
 
 # blog itself
 
