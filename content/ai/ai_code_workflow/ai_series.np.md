@@ -1,5 +1,9 @@
+
+
 # all
 
+- Ds general - decision making science - planning out the decision, using the past to automate future, using past to figure out what happened and come up with some hypothesis on how to move forward
+- Photo on home screen is pixelated on a monitor - can we make this be bigger?
 - Feel free to just drop this into your session you're building the skills with by
 - picture at top like medium
 - All the AI ones should start with A staleness note something like I wrote this in Fall of 2026. So if you're reading this after the singularity has happened, forgive us, we didn't know yet
@@ -19,6 +23,7 @@
 ## dry
 
 - Dry has the dynamic config (as the solution to string handlings and variable hard encoding - two things I've seen )
+- Dry - not just for hard encoding variables and strings, also for functions, and even whole services, see DC and ctr sections - what we do is complicated, so it's helpful to discretize and delegate the decision making, trust that the component works so you don't have to write it over and over again
 
 ## organization (srp and soc)
 
@@ -52,11 +57,13 @@
 - Ai code implement - principles and process (thats why we just spent so much time on the rest of it)
 - Waterfall
 - Agentic coding - giving feedback loop so it can check its own work - its good at trying a million things but not good at predicting which will be best
+- Agent coding - agents are non deterministic so we should check anything we tell them is actually followed correctly and any policy that can be encoded should be (eg system around making sure version is probably assigned in the config file itself, unit tests for code, qc on.data that code makes) - and where it can't be we should use as strong of language as possible and potentially even put dedicated other skills to check that a certain policy is upheld (again version assignment) when the blast radius is so high and finally as much logging of its decisioning as possible - spec kit helps with this)
 
 
 # exploration
 ## pricing model
 - Pricing - add /context, agent view in section for how to monitor, also that timer tells you
+- Pricing model - cold cache reads can be gotten around by asking claude to go look for something in another session - it limits the tokens from tool calling and the thinking tokens aren’t read, etc - so its not the exact same but if you wanted to ask it a question I’ve had the experience with a colleague of it being 350k to 90k and we got the answer we wanted about a decision that he made
 
 ## injecting context (skills, agents)
 - Injecting system context - Claude.md com is that it only works in one repo and you can't choose when to inject it (also it doesn't get followed as closely if you inject closer to the task at hand)
@@ -96,6 +103,11 @@
 - System - using third party for their first class purposes (dbx, mlflow, Kafka as pubsub) - always a trade off between complexity (ie the drawback of using that thing) and the value it adds (mlflow for xgboost replaces an optuna/ for loop and jupyter notebooks for hosted complexity and rigid ui… feels like this only pays for itself with deep learning where managing all of it yourself becomes a big enough lift) - I’m probably a little farther on the “go to the root” end of the spectrum where I’d prefer the s3 type of solution that can be used easily, quickly spun up and hooked up to athena if I need over a delta table where I’m a little more limited
 - System - level of abstraction choice - surely there will be agentic plugins for mlflow and dbx soon that actually work but i still feel like it will be a decision to make - you can really get tied in a knot if you just use technology to use it an a lot of times these ones aren’t much better than just designing it yourself the way you and your group work best with whatever constraints you have (and code is super cheap now, organization is key and expensive)
 -System - level of abstraction choice - unless I know absolutely up on how I'm going to use the service and all of its primary features, it actually can be easier to just leave it out because sometimes something like ml flow is really easy to just add in later in the places that I need it
+- Crt - git, why we don't put data with code even though it seems like it kind of works  (binaries too), kind of break this with images in ml context but we do our best to mitigate that with size and not editing them often and keeping these repos separate from actual deployable code repos (it's what we used to do with nbs anyways, waiting for an industry solution here)
+- Crt - other side of the pandas analogy - if all you need is to add two numbers together you should make them variables (to avoid hard encoding of course) but imagine wrapping each in a pd.df and then stacking those and naming a column “numbers to be added” and then doing sum on it (and being like “pandas says it's good for aggregation and summing is the primary aggregation function)
+- Crt - abstraction - using a 3rd party thing you have to wait for them to build whatever functionality you might need - beholden to wait for mlflow to try to give you access to log in a certain way or provide hook for slack alerting or whatever (You can probably tailor things to your needs, but it might end up looking really messy and weird to maintain)
+- Crt - Also generalization for DS is hard - we aren't standard in our business needs or problems we're solving - a lot of these tools came out and gained traction with DL bc the middle part was similar enough and enough of a pain in the ass to design around the tool (like we do with postgres or something)
+- Crt - “are we reinventing the wheel?” - no we're using the original wheel not like a unicycle we've repurposed to be a spindle or something but all you need is the wheel part) (“but what's wrong with it, it works and I just don't see how this is different or it was broken” - well hopping on one foot I can still cook but it's not as easy to do and makes really simple tasks overloaded with complications like bending down to get something in the fridge
 
 
 ## DC (designing components - analog to soc)
@@ -103,6 +115,9 @@
 - DC - edges also include like how it's consumed within another application. Say the governing one
 - DC - do one thing well - linux
 - System - designing components (edges) well and letting services use them as they will (Microsoft sucks at this Google is amazing - Google docs vs word)
+- DC - if components are designed correctly at the foundation (like versioning to bundle and easily track referencing / ci / branching logic), then expandability is easy (and honestly fun, like playing with legos - whereas I find the opposite - hacking my way through a problem using foundational pieces that weren't designed for it, is pretty laborious and challenging and really just making that component then hard to use later) - Joanna example thought it might be a stretch for me to do a generalized framework, but I'd already done a good job with the foundational components and so it was pretty trivial to just step back out a little further on the abstraction level building
+    - (crt - abstraction - this is also why I probably lean in house for foundational pieces - postgress is great but dbx and mlflow can be constraining ror this)
+    - Leads also into why I'm so passionat
 
 
 ## define your edges / contracts
